@@ -5,14 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'io.fabric'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'key0'
-            keyPassword '35591853'
-            storeFile file('H:/GitHub/Euru/keystore/euru.jks')
-            storePassword '35591853'
-        }
-    }
+    
     compileSdkVersion 28
     defaultConfig {
         applicationId "io.euruapp"
@@ -33,7 +26,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
     }
     compileOptions {
