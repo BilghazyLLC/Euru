@@ -1,0 +1,41 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:1-10:12
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:1-10:12
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:1-10:12
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:1-10:12
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:1-10:12
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:1-10:12
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:1-10:12
+	package
+		ADDED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:7:2-35
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+		ADDED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:1-10:12
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+		ADDED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:1-10:12
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:6:11-69
+application
+ADDED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:9:2-50
+	android:label
+		ADDED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml:9:15-47
+uses-sdk
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+		ADDED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+		ADDED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\lenovo\Documents\GitHub\Euru\bypass\src\main\AndroidManifest.xml
