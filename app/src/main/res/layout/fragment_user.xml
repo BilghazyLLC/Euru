@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:id="@+id/container"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/background_light"
+                                                   android:orientation="vertical"
+                                                   tools:context=".view.BusinessActivity">
+
+    <!--android:background="#ccf5ff"-->
+
+    <ScrollView
+            android:id="@+id/scroll_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/spacing_large"
+            android:nestedScrollingEnabled="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:paddingBottom="@dimen/spacing_large"
+                android:layout_height="wrap_content">
+
+
+            <io.codelabs.widget.CircularImageView
+                    android:layout_width="@dimen/large_avatar_size"
+                    android:layout_height="@dimen/large_avatar_size"
+                    android:id="@+id/avatar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:src="@drawable/placeholderuser"
+                    android:elevation="@dimen/z_avatar"
+                    android:layout_marginTop="@dimen/spacing_xlarge"/>
+
+            <!--User Personal Information-->
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                                                               android:layout_height="wrap_content"
+                                                               app:layout_constraintTop_toTopOf="@id/avatar"
+                                                               app:layout_constraintStart_toStartOf="parent"
+                                                               app:layout_constraintEnd_toEndOf="parent"
+                                                               android:layout_marginStart="@dimen/padding_large"
+                                                               android:layout_marginEnd="@dimen/padding_large"
+                                                               android:layout_marginTop="60dp"
+                                                               android:id="@+id/card_user_info"
+                                                               app:cardCornerRadius="@dimen/spacing_normal"
+                                                               app:cardBackgroundColor="@color/background_card"
+                                                               app:cardElevation="@dimen/z_card">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:padding="@dimen/padding_dialog"
+                                android:layout_marginTop="@dimen/spacing_xlarge"
+                                android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_marginTop="@dimen/padding_dialog"
+                              android:id="@+id/userName"
+                              android:layout_alignParentTop="true"
+                              android:layout_centerHorizontal="true"
+                              android:padding="@dimen/spacing_micro"
+                              tools:text="@string/dummy_username"
+                              style="@style/TextAppearance.DribbbleShotTitle"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/lato"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:gravity="center"
+                              android:id="@+id/userEmail"
+                              android:layout_centerHorizontal="true"
+                              tools:text="@string/dummy_email"
+                              android:layout_below="@id/userName"
+                              style="@style/TextAppearance.DribbbleShotDescription"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/lato"/>
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--User Requests-->
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                                                               android:layout_height="wrap_content"
+                                                               app:layout_constraintTop_toBottomOf="@id/card_user_info"
+                                                               app:layout_constraintStart_toStartOf="parent"
+                                                               app:layout_constraintEnd_toEndOf="parent"
+                                                               android:id="@+id/card_user_requests"
+                                                               android:foreground="?attr/selectableItemBackgroundBorderless"
+                                                               android:clickable="true"
+                                                               android:focusable="true"
+                                                               android:layout_marginStart="@dimen/padding_large"
+                                                               android:layout_marginEnd="@dimen/padding_large"
+                                                               android:layout_marginTop="@dimen/padding_normal"
+                                                               app:cardCornerRadius="@dimen/spacing_normal"
+                                                               app:cardBackgroundColor="@color/background_card"
+                                                               app:cardElevation="@dimen/z_card">
+
+                <RelativeLayout android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/padding_normal">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:gravity="start"
+                              android:layout_alignParentTop="true"
+                              android:layout_alignParentStart="true"
+                              android:text="My Previous Request(s)"
+                              android:textSize="16sp"
+                              android:layout_toEndOf="@id/image_job"
+                              android:id="@+id/header_user_requests"
+                              android:textStyle="bold"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/lato"/>
+
+                    <TextView android:layout_width="match_parent"
+                              android:gravity="start|center_vertical"
+                              tools:text="569"
+                              android:layout_below="@id/header_user_requests"
+                              android:layout_marginTop="@dimen/spacing_normal"
+                              android:fontFeatureSettings="onum"
+                              style="@style/TextAppearance.DribbbleShotDescription"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/lato"
+                              android:id="@+id/user_requests_count"/>
+
+                    <ImageView android:layout_width="@dimen/avatar_header"
+                               android:layout_height="@dimen/avatar_header"
+                               android:layout_alignParentEnd="true"
+                               android:id="@+id/image_job"
+                               android:alpha="0.65"
+                               android:src="@drawable/ic_sent_requests"
+                               android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--User Pending Requests-->
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                                                               android:layout_height="wrap_content"
+                                                               app:layout_constraintTop_toBottomOf="@id/card_user_requests"
+                                                               app:layout_constraintStart_toStartOf="parent"
+                                                               app:layout_constraintEnd_toEndOf="parent"
+                                                               android:id="@+id/card_user_pending_jobs"
+                                                               android:layout_marginStart="@dimen/padding_large"
+                                                               android:layout_marginEnd="@dimen/padding_large"
+                                                               android:layout_marginTop="@dimen/padding_normal"
+                                                               app:cardCornerRadius="@dimen/spacing_normal"
+                                                               android:foreground="?attr/selectableItemBackgroundBorderless"
+                                                               android:clickable="true"
+                                                               android:focusable="true"
+                                                               app:cardBackgroundColor="@color/background_card"
+                                                               app:cardElevation="@dimen/z_card">
+
+                <RelativeLayout android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/padding_normal">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:gravity="start"
+                              android:layout_alignParentTop="true"
+                              android:layout_alignParentStart="true"
+                              android:text="My Pending Request(s)"
+                              android:textSize="16sp"
+                              android:layout_toEndOf="@id/image_pending_job"
+                              android:id="@+id/header_user_pending_requests"
+                              android:textStyle="bold"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/lato"/>
+
+                    <TextView android:layout_width="match_parent"
+                              android:gravity="start|center_vertical"
+                              tools:text="887125"
+                              android:layout_below="@id/header_user_pending_requests"
+                              android:layout_marginTop="@dimen/spacing_normal"
+                              android:fontFeatureSettings="onum"
+                              style="@style/TextAppearance.DribbbleShotDescription"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/lato"
+                              android:id="@+id/user_pending_request_count"/>
+
+                    <ImageView android:layout_width="@dimen/avatar_header"
+                               android:layout_height="@dimen/avatar_header"
+                               android:layout_alignParentEnd="true"
+                               android:id="@+id/image_pending_job"
+                               android:alpha="0.65"
+                               android:src="@drawable/in_progress"
+                               android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

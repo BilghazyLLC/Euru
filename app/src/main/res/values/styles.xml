@@ -1,0 +1,28 @@
+<resources>
+	
+	<!-- Base application theme. -->
+	<style name="Euru.Theme" parent="Theme.MaterialComponents.Light.NoActionBar">
+		<!-- Customize your theme here. -->
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+		<item name="android:colorBackground">@color/white</item>
+		<item name="android:statusBarColor">@color/colorPrimaryDark</item>
+		<item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+		<!--<item name="android:colorBackground">@color/colorGreenLight</item>-->
+		<!--<item name="android:textColor">@color/text_primary_light</item>-->
+	</style>
+	
+	<style name="Euru.Theme.Fullscreen">
+		<item name="android:windowFullscreen">true</item>
+	</style>
+	
+	<style name="TextAppearance.HomeTitle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+		<item name="android:textSize">18sp</item>
+		<item name="android:fontFamily">@font/lato</item>
+		<item name="android:textColor">@color/text_primary_light</item>
+		<!--<item name="android:textColor">?attr/colorAccent</item>-->
+	
+	</style>
+
+</resources>

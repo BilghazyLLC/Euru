@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center_horizontal"
+	android:orientation="vertical"
+	tools:context=".view.HomeActivity">
+	
+	<io.codelabs.widget.ForegroundImageView
+		android:layout_width="@dimen/large_avatar_size"
+		android:layout_height="@dimen/large_avatar_size"
+		android:visibility="gone"
+		android:scaleType="centerInside"
+		android:src="@drawable/app_logo" />
+
+
+	
+	<io.codelabs.widget.BaselineGridTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Select a category"
+		android:layout_marginTop="@dimen/spacing_large"
+		android:textColor="@color/text_primary_dark"
+		android:textSize="22sp"
+		app:fontFamily="@font/lato"
+		app:textAllCaps="true" />
+	
+	<io.codelabs.widget.BaselineGridTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/padding_normal"
+		android:text="What service do you need help with?"
+		android:textColor="@color/text_secondary_dark"
+		android:textSize="14sp"
+		app:fontFamily="@font/lato" />
+	
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginTop="@dimen/spacing_normal"
+		android:layout_marginStart="@dimen/spacing_normal"
+		android:layout_marginEnd="@dimen/spacing_normal"
+		android:background="@color/divider" />
+	
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/grid"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1" />
+
+</LinearLayout>

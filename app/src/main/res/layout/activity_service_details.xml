@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:id="@+id/container"
+             tools:context=".view.ServiceDetailsActivity"
+             android:layout_height="match_parent">
+
+    <include layout="@layout/loading"/>
+
+    <androidx.appcompat.widget.Toolbar android:layout_width="match_parent"
+                                       android:layout_height="?attr/actionBarSize"
+                                       android:id="@+id/toolbar"
+                                       android:elevation="4dp"
+                                       android:theme="@style/ThemeOverlay.AppCompat.Light"
+                                       app:navigationIcon="@drawable/ic_arrow_back"
+                                       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                                       app:title="Request details"/>
+
+    <LinearLayout android:id="@+id/content"
+                  android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:gravity="center_horizontal"
+                  android:padding="@dimen/padding_normal"
+                  android:layout_marginTop="?attr/actionBarSize">
+
+        <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content">
+
+
+                <io.codelabs.widget.ForegroundImageView android:layout_width="match_parent"
+                                                        android:layout_height="@dimen/about_header_height"
+                                                        android:id="@+id/request_image_source"
+                                                        android:scaleType="centerCrop"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        android:src="@color/content_placeholder"/>
+
+                <LinearLayout
+                        android:id="@+id/request_details_container"
+                        app:layout_constraintTop_toBottomOf="@id/request_image_source"
+                        android:layout_marginTop="@dimen/padding_normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Request Details"
+                                                             android:textSize="14sp"
+                                                             android:textStyle="bold"
+                                                             android:textAllCaps="true"
+                                                             app:fontFamily="@font/lato"
+                                                             android:textColor="?attr/colorAccent"/>
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             tools:text="@string/dummy_about"
+                                                             android:id="@+id/request_details"
+                                                             android:textSize="16sp"
+                                                             app:fontFamily="@font/lato"
+                                                             android:layout_marginTop="@dimen/spacing_micro"
+                                                             android:textColor="@color/text_secondary_dark"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/request_customer_details_container"
+                        app:layout_constraintTop_toBottomOf="@id/request_details_container"
+                        android:layout_marginTop="@dimen/padding_normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Customer Details"
+                                                             android:textSize="14sp"
+                                                             android:textStyle="bold"
+                                                             android:textAllCaps="true"
+                                                             app:fontFamily="@font/lato"
+                                                             android:textColor="?attr/colorAccent"/>
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             tools:text="@string/dummy_username"
+                                                             android:id="@+id/request_customer_details"
+                                                             android:textSize="16sp"
+                                                             app:fontFamily="@font/lato"
+                                                             android:layout_marginTop="@dimen/spacing_micro"
+                                                             android:textColor="@color/text_secondary_dark"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/request_location_details_container"
+                        app:layout_constraintTop_toBottomOf="@id/request_customer_details_container"
+                        android:layout_marginTop="@dimen/padding_normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Location Info"
+                                                             android:textSize="14sp"
+                                                             android:textStyle="bold"
+                                                             android:textAllCaps="true"
+                                                             app:fontFamily="@font/lato"
+                                                             android:textColor="?attr/colorAccent"/>
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             tools:text="2nd Danso Close, Dansoman RoundAbout, Accra, Ghana"
+                                                             android:id="@+id/request_location"
+                                                             android:textSize="16sp"
+                                                             app:fontFamily="@font/lato"
+                                                             android:layout_marginTop="@dimen/spacing_micro"
+                                                             android:textColor="@color/text_secondary_dark"/>
+
+                    <fragment android:layout_width="match_parent" android:layout_height="@dimen/about_header_height_small"
+                              android:name="com.google.android.gms.maps.SupportMapFragment"
+                              android:layout_marginTop="@dimen/spacing_normal"
+                              android:id="@+id/request_location_map"/>
+
+                    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:padding="@dimen/spacing_normal"
+                            android:text="Accept"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/spacing_large"
+                            android:enabled="false"
+                            android:id="@+id/accept_request_button"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:onClick="acceptRequest"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

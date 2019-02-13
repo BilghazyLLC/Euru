@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.codelabs.widget.ForegroundLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                           xmlns:app="http://schemas.android.com/apk/res-auto"
+                                           xmlns:tools="http://schemas.android.com/tools"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           android:orientation="vertical"
+                                           android:gravity="center"
+                                           android:id="@+id/container"
+
+                                           tools:context=".view.AuthActivity">
+
+    <io.codelabs.widget.BaselineGridTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:paddingStart="@dimen/padding_normal"
+            android:paddingTop="@dimen/padding_normal"
+            android:paddingEnd="@dimen/padding_normal"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:text="@string/welcome_to_euru"
+            android:textColor="@color/text_primary_dark"
+            android:textSize="26sp"
+            app:fontFamily="@font/lato"/>
+
+    <io.codelabs.widget.BaselineGridTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_normal"
+            android:paddingEnd="@dimen/padding_normal"
+            android:text="Select what to do on Euru"
+            android:textColor="@color/text_secondary_dark"
+            android:textSize="14sp"
+            android:layout_marginBottom="32dp"
+            app:fontFamily="@font/lato"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/z_fab"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/content">
+
+        <com.google.android.material.card.MaterialCardView
+                android:layout_width="150dp"
+                android:padding="@dimen/z_fab"
+                android:layout_margin="@dimen/z_card"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="@dimen/z_fab">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/z_fab"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="2">
+
+                <io.codelabs.widget.ForegroundImageView
+                        android:layout_width="@dimen/large_avatar_size"
+                        android:layout_height="@dimen/large_avatar_size"
+                        android:scaleType="fitCenter"
+                        android:onClick="loginAsCustomer"
+                        android:src="@drawable/user"/>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <io.codelabs.widget.BaselineGridTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                app:fontFamily="@font/lato"
+                android:textColor="@color/background_super_dark"
+                android:padding="@dimen/spacing_micro"
+                android:text="Hire a service provider"/>
+
+
+        <com.google.android.material.card.MaterialCardView
+
+                android:layout_width="150dp"
+                android:padding="@dimen/z_fab"
+                android:layout_margin="@dimen/z_card"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="@dimen/z_fab">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/z_fab"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="2">
+
+
+                <io.codelabs.widget.ForegroundImageView
+                        android:layout_width="@dimen/large_avatar_size"
+                        android:layout_height="@dimen/large_avatar_size"
+                        android:scaleType="fitCenter"
+                        android:onClick="loginAsProvider"
+                        android:src="@drawable/provider_three"/>
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <io.codelabs.widget.BaselineGridTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                app:fontFamily="@font/lato"
+                android:textColor="@color/background_super_dark"
+                android:padding="@dimen/spacing_micro"
+                android:text="Become an Euru Service Provider"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/loading"/>
+
+
+</io.codelabs.widget.ForegroundLinearLayout>

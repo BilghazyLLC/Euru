@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<item android:title="@string/app_name">
+		<menu>
+			<group android:checkableBehavior="single">
+				<item
+					android:id="@+id/menu_home"
+					android:icon="@drawable/ic_home"
+					android:title="Home" />
+				
+				<item
+					android:id="@+id/menu_profile"
+					android:icon="@drawable/ic_person"
+					android:title="Profile" />
+				
+				<item
+					android:id="@+id/menu_settings"
+					android:icon="@drawable/ic_settings"
+					android:title="Settings" />
+			</group>
+		</menu>
+	</item>
+
+	<item
+		android:id="@+id/menu_ratings"
+		android:icon="@drawable/ic_ratings"
+		android:title="Rate Us" />
+
+	<item
+		android:id="@+id/menu_invite"
+		android:icon="@drawable/ic_invite"
+		android:title="Invite colleagues" />
+
+	<item
+		android:id="@+id/menu_about"
+		android:icon="@drawable/ic_android"
+		android:title="About Euru" />
+	
+	<item
+		android:id="@+id/menu_logout"
+		android:icon="@drawable/ic_exit"
+		android:title="Logout" />
+
+</menu>

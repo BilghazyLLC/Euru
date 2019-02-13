@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:id="@+id/container"
+             android:layout_height="match_parent">
+
+    <include layout="@layout/loading"/>
+
+
+    <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/padding_dialog">
+
+        <io.codelabs.widget.CircularImageView
+                android:id="@+id/avatar"
+                android:layout_width="@dimen/large_avatar_size"
+                android:layout_height="@dimen/large_avatar_size"
+                android:src="@drawable/avatar_placeholder"
+                android:layout_marginBottom="@dimen/spacing_large"/>
+
+
+        <EditText
+                android:id="@+id/username"
+                android:hint="Username"
+                android:inputType="textCapWords"
+                android:textColor="@color/text_secondary_dark"
+                android:fontFamily="@font/lato"
+                android:padding="@dimen/spacing_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <Button android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/padding_dialog"
+                android:layout_height="wrap_content"
+                android:id="@+id/setup_account"
+                android:padding="@dimen/spacing_normal"
+                android:text="Setup account"/>
+
+    </LinearLayout>
+
+</FrameLayout>

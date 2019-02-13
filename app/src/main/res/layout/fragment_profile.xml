@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:id="@+id/profile_container">
+
+    <io.codelabs.widget.ForegroundRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_normal">
+
+        <io.codelabs.widget.CircularImageView
+                android:id="@+id/avatar"
+                android:layout_width="@dimen/avatar_header"
+                android:layout_height="@dimen/avatar_header"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/avatar_placeholder"/>
+
+        <io.codelabs.widget.BaselineGridTextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_toEndOf="@id/avatar"
+                android:ellipsize="end"
+                android:textColor="@color/text_primary_dark"
+                android:maxLines="1"
+                tools:text="@string/dummy_username"
+                android:textSize="18sp"
+                app:fontFamily="@font/lato"/>
+
+        <io.codelabs.widget.BaselineGridTextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/username"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:textColor="@color/text_secondary_dark"
+                android:layout_toEndOf="@id/avatar"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="14sp"
+                app:fontFamily="@font/lato"
+                tools:text="+23345678906"/>
+
+        <io.codelabs.widget.BaselineGridTextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/phone"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_toEndOf="@id/avatar"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="14sp"
+                app:fontFamily="@font/lato"
+                android:textColor="@color/text_secondary_dark"
+                tools:text="120th Gimpa Street Avenue, Accra, Ghana"/>
+
+        <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/avatar"
+                android:layout_margin="@dimen/padding_normal"
+                android:background="@color/divider"/>
+
+        <io.codelabs.widget.BaselineGridTextView
+                android:id="@+id/business_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:textColor="@color/text_primary_dark"
+                android:text="@string/my_business_es"
+                android:textSize="20sp"
+                app:fontFamily="@font/lato"
+                app:textAllCaps="true"/>
+
+        <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/business_header"
+                android:layout_margin="@dimen/padding_normal"
+                android:background="@color/divider"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider2"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical"/>
+
+        <Button
+                android:id="@+id/save"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/grid"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/padding_dialog"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:enabled="false"
+                android:text="@string/save_and_continue"/>
+
+    </io.codelabs.widget.ForegroundRelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_business"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_add_light"/>
+
+</FrameLayout>

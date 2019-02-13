@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container"
+        tools:context=".view.ServiceProviderDetailsActivity">
+
+
+    <include layout="@layout/loading"/>
+
+    <androidx.appcompat.widget.Toolbar android:layout_width="match_parent"
+                                       android:layout_height="?attr/actionBarSize"
+                                       android:id="@+id/toolbar"
+                                       android:elevation="4dp"
+                                       android:theme="@style/ThemeOverlay.AppCompat.Light"
+                                       app:navigationIcon="@drawable/ic_arrow_back"
+                                       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                                       app:title="Provider details"/>
+
+    <LinearLayout android:id="@+id/content"
+                  android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:gravity="center_horizontal"
+                  android:padding="@dimen/padding_normal"
+                  android:layout_marginTop="?attr/actionBarSize">
+
+        <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content">
+
+                <RelativeLayout android:layout_width="match_parent"
+                                android:id="@+id/provider_details"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                    <io.codelabs.widget.CircularImageView android:layout_width="@dimen/header_avatar"
+                                                          android:layout_height="@dimen/header_avatar"
+                                                          android:src="@drawable/ic_player"
+                                                          android:id="@+id/avatar"
+                                                          android:layout_alignParentStart="true"
+                                                          android:layout_alignParentTop="true"/>
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="0dp"
+                                                             android:maxLines="1"
+                                                             android:id="@+id/provider_username"
+                                                             android:ellipsize="end"
+                                                             android:layout_marginStart="@dimen/spacing_normal"
+                                                             android:layout_height="wrap_content"
+                                                             android:layout_alignParentEnd="true"
+                                                             android:layout_toEndOf="@id/avatar"
+                                                             android:layout_alignParentTop="true"
+                                                             tools:text="@string/dummy_username"
+                                                             android:textColor="@color/text_primary_dark"
+                                                             app:fontFamily="@font/lato"
+                                                             android:textSize="18sp"/>
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="0dp"
+                                                             android:maxLines="1"
+                                                             android:id="@+id/provider_phone"
+                                                             android:ellipsize="end"
+                                                             android:layout_marginStart="@dimen/spacing_normal"
+                                                             android:layout_height="wrap_content"
+                                                             android:layout_alignParentEnd="true"
+                                                             android:layout_toEndOf="@id/avatar"
+                                                             tools:text="@string/dummy_phone"
+                                                             android:textColor="@color/text_tertiary_dark"
+                                                             android:layout_below="@id/provider_username"
+                                                             app:fontFamily="@font/lato"
+                                                             android:textSize="14sp"/>
+
+                </RelativeLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                      android:background="@color/divider"
+                      android:layout_margin="@dimen/spacing_normal"
+                      app:layout_constraintTop_toBottomOf="@id/provider_details"/>
+
+                <io.codelabs.widget.ForegroundImageView android:layout_width="match_parent"
+                                                        android:layout_height="@dimen/about_header_height"
+                                                        android:id="@+id/request_image_source"
+                                                        android:scaleType="centerCrop"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        android:layout_marginTop="@dimen/padding_dialog"
+                                                        app:layout_constraintTop_toBottomOf="@id/provider_details"
+                                                        android:src="@color/content_placeholder"/>
+
+                <LinearLayout
+                        android:id="@+id/request_details_container"
+                        app:layout_constraintTop_toBottomOf="@id/request_image_source"
+                        android:layout_marginTop="@dimen/padding_normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Request Details"
+                                                             android:textSize="14sp"
+                                                             android:textStyle="bold"
+                                                             android:textAllCaps="true"
+                                                             app:fontFamily="@font/lato"
+                                                             android:textColor="?attr/colorAccent"/>
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             tools:text="@string/dummy_about"
+                                                             android:id="@+id/request_details"
+                                                             android:textSize="16sp"
+                                                             app:fontFamily="@font/lato"
+                                                             android:layout_marginTop="@dimen/spacing_micro"
+                                                             android:textColor="@color/text_secondary_dark"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/request_location_details_container"
+                        app:layout_constraintTop_toBottomOf="@id/request_details_container"
+                        android:layout_marginTop="@dimen/padding_normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="Location Info"
+                                                             android:textSize="14sp"
+                                                             android:textStyle="bold"
+                                                             android:textAllCaps="true"
+                                                             app:fontFamily="@font/lato"
+                                                             android:textColor="?attr/colorAccent"/>
+
+                    <io.codelabs.widget.BaselineGridTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             tools:text="2nd Danso Close, Dansoman RoundAbout, Accra, Ghana"
+                                                             android:id="@+id/request_location"
+                                                             android:textSize="16sp"
+                                                             app:fontFamily="@font/lato"
+                                                             android:layout_marginTop="@dimen/spacing_micro"
+                                                             android:textColor="@color/text_secondary_dark"/>
+
+                    <fragment android:layout_width="match_parent"
+                              android:layout_height="@dimen/about_header_height_small"
+                              android:name="com.google.android.gms.maps.SupportMapFragment"
+                              android:layout_marginTop="@dimen/spacing_normal"
+                              android:id="@+id/request_location_map"/>
+
+                    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:padding="@dimen/spacing_normal"
+                            android:text="End Job"
+                            android:visibility="gone"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/spacing_large"
+                            android:onClick="endJob"
+                            android:id="@+id/accept_service_request_button"
+                            style="@style/Widget.AppCompat.Button.Colored"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>

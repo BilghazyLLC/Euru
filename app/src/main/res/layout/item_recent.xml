@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:clickable="true"
+	android:focusable="true"
+	android:foreground="?attr/selectableItemBackgroundBorderless"
+	android:padding="@dimen/spacing_normal"
+	tools:targetApi="m">
+	
+	<View
+		android:id="@+id/model_view"
+		android:layout_width="5dp"
+		android:layout_height="0dp"
+		android:background="?attr/colorAccent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<io.codelabs.widget.BaselineGridTextView
+		android:id="@+id/model_title"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:ellipsize="end"
+		android:gravity="start"
+		android:maxLines="1"
+		android:paddingStart="@dimen/padding_normal"
+		android:paddingEnd="@dimen/padding_normal"
+		android:textColor="@color/text_primary_dark"
+		android:textSize="18sp"
+		app:fontFamily="@font/lato"
+		app:layout_constraintEnd_toStartOf="@id/model_timestamp"
+		app:layout_constraintStart_toEndOf="@id/model_view"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="Repair of laptop parts" />
+	
+	<io.codelabs.widget.BaselineGridTextView
+		android:id="@+id/model_timestamp"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/spacing_micro"
+		android:paddingStart="@dimen/padding_normal"
+		android:paddingEnd="@dimen/padding_normal"
+		android:textAppearance="@style/TextAppearance.CommentTimestamp"
+		android:textColor="@color/text_tertiary_dark"
+		app:fontFamily="@font/lato"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@id/model_title"
+		tools:text="@string/dummy_reg_date" />
+	
+	<io.codelabs.widget.ForegroundImageView
+		android:id="@+id/model_state"
+		android:layout_width="@dimen/padding_large"
+		android:layout_height="@dimen/padding_large"
+		android:layout_marginStart="@dimen/padding_normal"
+		android:layout_marginTop="@dimen/spacing_normal"
+		android:src="@drawable/avatar_placeholder"
+		android:tint="@color/colorGreen"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toEndOf="@id/model_view"
+		app:layout_constraintTop_toBottomOf="@id/model_title" />
+	
+	<io.codelabs.widget.BaselineGridTextView
+		android:id="@+id/model_state_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical|start"
+		android:padding="@dimen/spacing_normal"
+		android:textColor="@color/text_secondary_dark"
+		app:fontFamily="@font/lato"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toEndOf="@id/model_state"
+		app:layout_constraintTop_toBottomOf="@id/model_title"
+		tools:text="Completed" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

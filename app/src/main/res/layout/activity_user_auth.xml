@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:focusableInTouchMode="true"
+	android:gravity="center"
+	android:orientation="vertical"
+	tools:context=".view.UserAuthActivity">
+	
+	<include layout="@layout/loading" />
+	
+	<FrameLayout
+		android:layout_width="?attr/actionBarSize"
+		android:layout_height="?attr/actionBarSize"
+		android:layout_gravity="top|start">
+		
+		<ImageButton
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/transparent"
+			android:onClick="dismiss"
+			android:src="@drawable/ic_close_down" />
+	
+	</FrameLayout>
+	
+	<LinearLayout
+		android:id="@+id/content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center"
+		android:orientation="vertical">
+		
+		<io.codelabs.widget.BaselineGridTextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/spacing_large"
+			android:gravity="center_horizontal"
+			android:padding="@dimen/padding_normal"
+			android:text="Enter your personal information to get started"
+			android:textColor="@color/text_primary_dark"
+			android:textSize="20sp"
+			app:fontFamily="@font/lato" />
+		
+		<com.google.android.material.textfield.TextInputLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/spacing_normal">
+			
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/username"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/lato"
+				android:hint="@string/person_name"
+				android:inputType="textCapWords|textPersonName|textAutoComplete|textAutoCorrect"
+				android:textColor="@color/text_secondary_dark" />
+		
+		</com.google.android.material.textfield.TextInputLayout>
+		
+		<com.google.android.material.textfield.TextInputLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/spacing_large"
+			android:padding="@dimen/spacing_normal">
+			
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/phone"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/lato"
+				android:hint="@string/phone"
+				android:inputType="phone"
+				android:textColor="@color/text_secondary_dark" />
+		
+		</com.google.android.material.textfield.TextInputLayout>
+		
+		<Button
+			style="@style/PlaidDarkOverlay"
+			android:layout_width="150dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|center_horizontal"
+			android:gravity="center"
+			android:onClick="phoneLogin"
+			android:padding="@dimen/spacing_normal"
+			android:text="Login"
+			android:textColor="@color/text_primary_light" />
+		
+		
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/padding_dialog"
+			android:gravity="center"
+			android:orientation="horizontal">
+			
+			
+			<View
+				android:layout_width="200dp"
+				android:layout_height="1dp"
+				android:background="@color/divider" />
+			
+			<io.codelabs.widget.BaselineGridTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="@dimen/padding_normal"
+				android:text="Or"
+				android:textColor="@color/text_secondary_dark"
+				app:textAllCaps="true" />
+			
+			<View
+				android:layout_width="200dp"
+				android:layout_height="1dp"
+				android:background="@color/divider" />
+		
+		</LinearLayout>
+		
+		
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/padding_dialog"
+			android:layout_marginEnd="@dimen/padding_dialog"
+			android:background="@color/designer_news"
+			android:gravity="center_vertical"
+			android:onClick="googleLogin"
+			android:orientation="horizontal"
+			android:padding="@dimen/spacing_normal">
+			
+			<io.codelabs.widget.CircularImageView
+				android:layout_width="@dimen/avatar_size"
+				android:layout_height="@dimen/avatar_size"
+				android:scaleType="centerCrop"
+				android:src="@drawable/google_app_logo" />
+			
+			<io.codelabs.widget.BaselineGridTextView
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:text="Continue with Google"
+				android:textColor="@color/white"
+				android:textSize="18sp"
+				android:textStyle="bold"
+				app:fontFamily="@font/lato"
+				app:textAllCaps="true" />
+		
+		</LinearLayout>
+	
+	
+	</LinearLayout>
+</FrameLayout>

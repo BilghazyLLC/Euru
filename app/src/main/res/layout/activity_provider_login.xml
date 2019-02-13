@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/container"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:elevation="@dimen/zero_spacing"
+             tools:context=".view.ProviderLoginActivity">
+
+    <include layout="@layout/loading"/>
+
+    <FrameLayout
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="top|start">
+
+        <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:onClick="dismiss"
+                android:src="@drawable/ic_arrow_back_padded"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="top|end">
+
+        <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:onClick="pickImage"
+                android:src="@drawable/ic_camera"/>
+
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/spacing_huge"
+            android:paddingBottom="@dimen/spacing_huge">
+
+        <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+
+                android:orientation="vertical"
+                android:padding="@dimen/padding_dialog">
+
+
+            <io.codelabs.widget.ForegroundImageView
+                    android:id="@+id/login_avatar"
+                    android:layout_width="@dimen/large_avatar_size"
+                    android:layout_height="@dimen/large_avatar_size"
+                    android:src="@drawable/ic_player"/>
+
+            <io.codelabs.widget.BaselineGridTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_large"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/padding_normal"
+                    android:text="Enter your personal information to get started"
+                    android:textColor="@color/text_primary_dark"
+                    android:textSize="20sp"
+                    app:fontFamily="@font/lato"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_normal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nextFocusDown="@transition/auto"
+                        android:fontFamily="@font/lato"
+                        android:hint="@string/username"
+                        android:inputType="textCapWords|textPersonName|textAutoComplete|textAutoCorrect"
+                        android:textColor="@color/text_secondary_dark"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_normal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato"
+                        android:hint="@string/business_name"
+                        android:inputType="textCapWords|textPersonName|textAutoComplete|textAutoCorrect"
+                        android:textColor="@color/text_secondary_dark"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_normal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:focusedByDefault="true"
+                        android:id="@+id/business_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato"
+                        android:gravity="top|start"
+                        android:hint="@string/business_desc"
+                        android:inputType="textCapSentences|textMultiLine|textAutoComplete|textAutoCorrect"
+                        android:minLines="3"
+                        android:maxLines="4"
+                        android:textColor="@color/text_secondary_dark"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_normal"
+                    android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:nextFocusForward="@transition/auto"
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_location"
+                        android:drawablePadding="@dimen/padding_normal"
+                        android:fontFamily="@font/lato"
+                        android:hint="@string/address"
+                        android:inputType="textCapWords|textPersonName|textAutoComplete|textAutoCorrect"
+                        android:textColor="@color/text_secondary_dark"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_normal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato"
+                        android:hint="@string/phone"
+                        android:inputType="phone"
+                        android:textColor="@color/text_secondary_dark"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                    android:id="@+id/business_category"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/padding_normal"
+                    android:layout_marginBottom="@dimen/spacing_huge"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato"
+                    android:prompt="@string/category"
+                    android:spinnerMode="dropdown"
+                    android:textColor="@color/text_secondary_dark"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <io.codelabs.widget.BaselineGridTextView
+            android:id="@+id/business_model_save_button"
+            style="@style/PlaidDarkOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/post_story"
+            android:gravity="center"
+            android:onClick="login"
+            android:padding="@dimen/spacing_normal"
+            android:text="Register"
+            android:textColor="@color/text_primary_light"
+            app:textAllCaps="true"/>
+
+</FrameLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center_vertical"
+	android:paddingTop="@dimen/padding_dialog"
+	android:orientation="vertical">
+	
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/padding_dialog">
+		
+		<io.codelabs.widget.ForegroundImageView
+			android:id="@+id/header_avatar"
+			android:layout_width="@dimen/avatar_header"
+			android:layout_height="@dimen/avatar_header"
+			android:layout_alignParentStart="true"
+			android:layout_alignParentTop="true"
+			android:src="@drawable/avatar_placeholder" />
+		
+		<io.codelabs.widget.ForegroundImageView
+			android:id="@+id/header_logo"
+			android:layout_width="@dimen/avatar_logo"
+			android:layout_height="@dimen/avatar_logo"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentTop="true"
+			android:src="@drawable/avatar_placeholder" />
+		
+		<io.codelabs.widget.BaselineGridTextView
+			android:id="@+id/header_username"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/header_avatar"
+			android:layout_marginTop="@dimen/padding_normal"
+			android:textColor="@color/text_primary_dark"
+			android:textSize="18sp"
+			app:fontFamily="@font/lato"
+			tools:text="Benjamin Avimenou" />
+		
+		<io.codelabs.widget.BaselineGridTextView
+			android:id="@+id/header_user_type"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/header_username"
+			android:textColor="@color/text_secondary_dark"
+			android:textSize="14sp"
+			app:fontFamily="@font/lato"
+			tools:text="User Type: Individual" />
+	
+	</RelativeLayout>
+	
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_margin="@dimen/spacing_normal"
+		android:background="@color/divider" />
+
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".view.SearchActivity">
+	
+	<View
+		android:id="@+id/scrim"
+		android:onClick="dismiss"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/app_scrim" />
+	
+	<FrameLayout
+		android:id="@+id/search_toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="?android:actionBarSize"
+		android:outlineProvider="bounds"
+		android:elevation="@dimen/z_app_bar"
+		android:transitionGroup="false"
+		android:theme="@style/SearchViewTheme">
+		
+		<View
+			android:id="@+id/search_background"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/background_light" />
+		
+		<SearchView
+			android:id="@+id/search_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginEnd="@dimen/padding_normal"
+			android:queryHint="@string/search_hint"
+			android:iconifiedByDefault="false"
+			android:transitionGroup="true" />
+		
+		<!-- wrapping layout needed for the touch ripple -->
+		<FrameLayout
+			android:id="@+id/searchback_container"
+			android:layout_width="96dp"
+			android:layout_height="match_parent"
+			android:paddingStart="4dp"
+			android:background="@android:color/transparent">
+			
+			<ImageButton
+				android:id="@+id/searchback"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:onClick="dismiss"
+				android:background="?android:selectableItemBackgroundBorderless"
+				android:tint="?attr/colorPrimaryDark"
+				android:src="@drawable/ic_arrow_back_padded" />
+		
+		</FrameLayout>
+	
+	</FrameLayout>
+	
+	<FrameLayout
+		android:id="@+id/results_container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="?android:actionBarSize"
+		android:background="@color/background_light"
+		android:elevation="@dimen/z_app_bar">
+		
+		<ProgressBar
+			android:id="@android:id/empty"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="@dimen/spacing_huge"
+			android:paddingBottom="@dimen/spacing_huge"
+			android:visibility="gone"
+			android:indeterminate="true"
+			android:indeterminateTint="?android:colorAccent"
+			android:indeterminateTintMode="src_in" />
+		
+		<ViewStub
+			android:id="@+id/stub_no_search_results"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout="@layout/no_search_results" />
+		
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/search_results"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scrollbars="vertical"
+			android:scrollbarStyle="outsideOverlay"
+			android:clipToPadding="false"
+			android:visibility="visible" />
+		
+		<View
+			android:id="@+id/results_scrim"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/background_light"
+			android:visibility="gone" />
+	
+	</FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/container"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:focusableInTouchMode="true"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              tools:context=".view.RequestServiceActivity">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/Codelabs.Mobile.AppbarOverlay"
+            app:navigationIcon="@drawable/ic_arrow_back_padded"
+            app:popupTheme="@style/Codelabs.Mobile.PopupOverlay"
+            app:title="Send Request Or Call Provider ..."/>
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+            <io.codelabs.widget.BaselineGridTextView
+                    android:id="@+id/request_screen_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/padding_normal"
+                    android:textColor="@color/text_primary_dark"
+                    android:textSize="20sp"
+                    app:fontFamily="@font/lato"
+                    tools:text="@string/request_service_title"/>
+
+            <ImageView
+                    android:tooltipText="Click tO Upload image"
+                    android:id="@+id/request_image"
+
+                    android:layout_width="@dimen/match_parent"
+                    android:layout_height="@dimen/about_header_height"
+                    android:scaleType="fitCenter"
+                    android:onClick="imagePrompt"
+                    android:src="@drawable/add_image_icon"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="@dimen/spacing_normal"
+                    android:background="@color/divider"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_normal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/request_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato"
+                        android:gravity="top|start"
+                        android:hint="Enter message here..."
+                        android:inputType="textCapSentences|textMultiLine|textAutoComplete|textAutoCorrect"
+                        android:maxLines="4"
+                        android:minLines="3"
+                        android:textColor="@color/text_secondary_dark"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/padding_dialog"
+                    android:onClick="sendMessage"
+                    android:padding="@dimen/spacing_normal"
+                    android:text="Send Request"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

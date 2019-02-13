@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.codelabs.widget.ForegroundRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:minHeight="?android:listPreferredItemHeight"
+	android:paddingTop="@dimen/padding_normal"
+	android:paddingEnd="@dimen/padding_normal"
+	android:paddingBottom="@dimen/padding_normal"
+	android:clipToPadding="false"
+	android:foreground="?android:selectableItemBackground"
+	android:background="@drawable/comment_background"
+	android:stateListAnimator="@animator/comment_selection"
+	android:descendantFocusability="blocksDescendants">
+	
+	<io.codelabs.widget.CircularImageView
+		android:id="@+id/business_owner_avatar"
+		android:layout_width="@dimen/avatar_bounds"
+		android:layout_height="@dimen/avatar_bounds"
+		android:layout_alignParentStart="true"
+		android:layout_centerVertical="true"
+		android:layout_marginEnd="@dimen/avatar_margin"
+		android:layout_marginStart="@dimen/avatar_margin"
+		android:padding="@dimen/avatar_padding"
+		android:stateListAnimator="@animator/raise"
+		android:src="@drawable/avatar_placeholder"
+		android:foreground="@drawable/avatar_ripple" />
+	
+	<io.codelabs.widget.BaselineGridTextView
+		android:id="@+id/business_address"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/business_owner"
+		app:fontFamily="@font/lato"
+
+		android:textSize="14sp"
+		android:maxLines="1"
+		android:textColor="@color/text_secondary_dark"
+		android:layout_toEndOf="@id/business_owner_avatar"
+		android:textAppearance="@style/TextAppearance.CommentTimestamp"
+		tools:text="2nd Legon Street" />
+	
+	<io.codelabs.widget.AuthorTextView
+		android:id="@+id/business_owner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_toEndOf="@id/business_owner_avatar"
+		android:layout_marginEnd="@dimen/spacing_normal"
+		android:lines="1"
+		android:textColor="@color/text_primary_dark"
+		android:textSize="18sp"
+		android:ellipsize="end"
+		tools:text="Samuel J. Smith" />
+	
+	<io.codelabs.widget.BaselineGridTextView
+		android:id="@+id/business_name"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_alignParentEnd="true"
+		android:layout_toEndOf="@id/business_owner_avatar"
+		android:layout_below="@id/business_address"
+		app:fontFamily="@font/lato"
+		android:ellipsize="end"
+		android:textSize="14sp"
+		android:maxLines="1"
+		android:textColor="@color/text_secondary_dark"
+		android:textAppearance="@style/TextAppearance.Comment"
+		android:textColorHighlight="?attr/colorAccent"
+		android:textColorLink="?attr/colorSecondary"
+		tools:text="Modern Business Enterprise" />
+
+</io.codelabs.widget.ForegroundRelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+			  android:paddingTop="@dimen/spacing_normal"
+	android:background="@android:color/white"
+	android:foreground="?android:attr/selectableItemBackgroundBorderless"
+	>
+	
+	<io.codelabs.widget.ForegroundImageView
+		android:id="@+id/business_picture"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:src="@color/content_placeholder"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<TextView
+		android:id="@+id/business_name"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:ellipsize="end"
+		android:fontFamily="@font/noto_sans"
+		android:maxLines="2"
+		android:gravity="center_horizontal"
+		android:textColor="@color/text_secondary_dark"
+		android:textSize="18sp"
+		android:padding="@dimen/spacing_normal"
+		tools:text="Riverside Automotive Repair" />
+	
+	<TextView
+		android:id="@+id/business_address"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/padding_normal"
+		android:layout_marginTop="@dimen/spacing_micro"
+		android:ellipsize="end"
+		android:fontFamily="@font/noto_sans"
+		android:maxLines="1"
+		android:visibility="gone"
+		android:textColor="@color/text_tertiary_dark"
+		tools:text="St.Gloria Street, Madina, Ghana" />
+	
+</LinearLayout>

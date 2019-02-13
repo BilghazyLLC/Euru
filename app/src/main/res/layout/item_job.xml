@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/raise"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/padding_normal">
+
+    <io.codelabs.widget.BaselineGridTextView
+            android:id="@+id/job_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/spacing_micro"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignStart="@id/job_category_image"
+            android:maxLines="2"
+            android:textColor="@color/text_primary_dark"
+            android:textSize="18sp"
+            tools:text="Quame Sefa Kai"
+            app:fontFamily="@font/lato"/>
+
+
+    <io.codelabs.widget.BaselineGridTextView
+            android:id="@+id/job_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary_dark"
+            android:textSize="16sp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/job_name"
+            tools:text="Shoemaker"
+            app:fontFamily="@font/lato"/>
+
+    <io.codelabs.widget.CircularImageView
+            android:id="@+id/job_category_image"
+            android:layout_width="@dimen/avatar_bounds"
+            android:layout_height="@dimen/avatar_bounds"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignBottom="@id/job_category"
+            tools:src="@drawable/placeholderuser"/>
+
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="@dimen/about_header_height_small"
+               android:id="@+id/job_image"
+               android:scaleType="centerCrop"
+               android:src="@color/content_placeholder"
+               android:layout_marginTop="@dimen/padding_normal"
+               android:layout_below="@id/job_category"
+    />
+
+    <io.codelabs.widget.BaselineGridTextView
+            android:id="@+id/job_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.CommentTimestamp"
+            android:layout_marginTop="@dimen/padding_normal"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/job_image"
+            tools:text="@string/dummy_reg_date"
+            app:fontFamily="@font/lato"/>
+
+</RelativeLayout>

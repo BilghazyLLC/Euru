@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@android:color/white"
+	android:foreground="?android:attr/selectableItemBackgroundBorderless"
+	android:padding="@dimen/spacing_normal">
+	
+	<io.codelabs.widget.ForegroundImageView
+		android:id="@+id/business_picture"
+		android:layout_width="@dimen/avatar_bounds"
+		android:layout_height="@dimen/avatar_bounds"
+		android:src="@drawable/avatar_placeholder"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+	
+	<TextView
+		android:id="@+id/business_name"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/padding_normal"
+		android:ellipsize="end"
+		android:fontFamily="@font/noto_sans"
+		android:maxLines="2"
+		android:textColor="@color/text_secondary_dark"
+		android:textSize="18sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/business_picture"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="Riverside Automotive Repair" />
+	
+	<TextView
+		android:id="@+id/business_address"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/padding_normal"
+		android:layout_marginTop="@dimen/spacing_micro"
+		android:ellipsize="end"
+		android:fontFamily="@font/noto_sans"
+		android:maxLines="1"
+		android:visibility="visible"
+		android:textColor="@color/text_tertiary_dark"
+		app:layout_constraintStart_toEndOf="@id/business_picture"
+		app:layout_constraintTop_toBottomOf="@id/business_name"
+		tools:text="St.Gloria Street, Madina, Ghana" />
+	
+</androidx.constraintlayout.widget.ConstraintLayout>

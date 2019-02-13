@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="io.euruapp"
+          android:installLocation="auto">
+
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="false"/>
+    <uses-feature
+            android:name="android.hardware.camera.autofocus"
+            android:required="false"/>
+
+    <application
+            android:name="io.euruapp.core.EuruApplication"
+            android:allowBackup="true"
+            android:appComponentFactory="@string/app_name"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Euru.Theme"
+            tools:ignore="GoogleAppIndexingWarning"
+            tools:replace="android:appComponentFactory">
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="@string/google_maps_key"/>
+
+        <service android:name="io.euruapp.util.EuruFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+                android:name="io.euruapp.util.ServiceRequestReceiver"
+                android:exported="false"/>
+
+        <!--suppress AndroidDomInspection -->
+        <service android:name="io.euruapp.core.location.GPSTracker"/>
+
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more. -->
+        <meta-data
+                android:name="com.google.firebase.messaging.default_notification_icon"
+                android:resource="@drawable/ic_stat_notification_icon"/>
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+                android:name="com.google.firebase.messaging.default_notification_color"
+                android:resource="@color/colorAccent"/>
+
+        <meta-data
+                android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="@string/default_notification_channel_id"/>
+
+        <activity
+                android:name="io.euruapp.view.MapsActivity"
+                android:configChanges="orientation|screenSize|screenLayout"
+                android:label="@string/title_activity_maps"/>
+        <activity android:name="io.euruapp.view.ProviderLoginActivity"/>
+        <activity android:name="io.euruapp.view.CategoryDetailsActivity"/>
+        <activity
+                android:name="io.euruapp.view.SplashActivity"
+                android:configChanges="screenLayout|screenSize|orientation"
+                android:theme="@style/Euru.Theme.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="io.euruapp.view.OnboardingActivity"
+                android:configChanges="screenLayout|screenSize|orientation"
+                android:theme="@style/Euru.Theme.Fullscreen"/>
+        <activity
+                android:name="io.euruapp.view.AuthActivity"
+                android:configChanges="screenLayout|screenSize|orientation"/>
+        <activity
+                android:name="io.euruapp.view.HomeActivity"
+                android:configChanges="screenLayout|screenSize|orientation"
+                android:screenOrientation="portrait"/>
+        <activity android:name="io.euruapp.view.SearchActivity"/>
+        <activity android:name="io.euruapp.view.UserAuthActivity"/>
+        <activity android:name="io.euruapp.view.RequestServiceActivity"/>
+        <activity android:name="io.euruapp.view.ProviderDetailsActivity"/>
+        <activity android:name="io.euruapp.view.BusinessActivity"/>
+        <activity android:name="io.euruapp.view.EditContentActivity"/>
+        <activity android:name="io.euruapp.view.JobsActivity"/>
+        <activity android:name="io.euruapp.view.AccountCompletion"/>
+        <activity android:name="io.euruapp.view.ServiceDetailsActivity"/>
+        <activity android:name="io.euruapp.view.ServiceProviderDetailsActivity"/>
+
+    </application>
+
+</manifest>

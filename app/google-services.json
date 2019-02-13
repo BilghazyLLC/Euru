@@ -1,0 +1,137 @@
+{
+  "project_info": {
+    "project_number": "487543559876",
+    "firebase_url": "https://bilghazyllc.firebaseio.com",
+    "project_id": "bilghazyllc",
+    "storage_bucket": "bilghazyllc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487543559876:android:5131686df9243053",
+        "android_client_info": {
+          "package_name": "io.euru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487543559876-gdfusd03470sshi5vs5roao3lhisltqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.euru",
+            "certificate_hash": "f69674e16e91709e17296c909d6e796ec72a4f1c"
+          }
+        },
+        {
+          "client_id": "487543559876-d1fd4k3s67f3346toru3lk7fddmg11v8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.euru",
+            "certificate_hash": "6f4dc099bfc66b5626b52ed71004f753ffdfaf94"
+          }
+        },
+        {
+          "client_id": "487543559876-h4cafdvlp5bd6h3iuged76k728nirfpc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.euru",
+            "certificate_hash": "a9c48a0fd885a49a8006626bac00a972ccbc3f61"
+          }
+        },
+        {
+          "client_id": "487543559876-ivg8grq32nd0f1q80moq473u1ua66106.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.euru",
+            "certificate_hash": "37907173583c40b02983e6b578b61d60c009354c"
+          }
+        },
+        {
+          "client_id": "487543559876-s1rba688015090n4ubbnjfe706oeddnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVApj0yswLNOo7ASyhqaS0_8sfR-KVypY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487543559876-s1rba688015090n4ubbnjfe706oeddnk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "487543559876-1ssmcrhm3e7qb6h9ttj3bqm6sp9h9n5r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "o.codelabs.bilghazy.Bilghazy-Demo-iOS-Application"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487543559876:android:6b29b8853903097f",
+        "android_client_info": {
+          "package_name": "io.euruapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487543559876-og9q12ttmujd8hvhe8qs478r6bti318h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.euruapp",
+            "certificate_hash": "6f4dc099bfc66b5626b52ed71004f753ffdfaf94"
+          }
+        },
+        {
+          "client_id": "487543559876-s1rba688015090n4ubbnjfe706oeddnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVApj0yswLNOo7ASyhqaS0_8sfR-KVypY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487543559876-s1rba688015090n4ubbnjfe706oeddnk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "487543559876-1ssmcrhm3e7qb6h9ttj3bqm6sp9h9n5r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "o.codelabs.bilghazy.Bilghazy-Demo-iOS-Application"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
