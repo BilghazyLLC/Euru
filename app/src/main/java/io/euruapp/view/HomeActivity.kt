@@ -36,7 +36,7 @@ import io.euruapp.util.ConstantsUtils
 import io.euruapp.util.glide.GlideApp
 import io.euruapp.viewmodel.UserDatabase
 import pub.devrel.easypermissions.EasyPermissions
-import java.util.HashMap
+import java.util.*
 
 class HomeActivity(override val layoutId: Int = R.layout.activity_home) : BaseActivity(),
     NavigationView.OnNavigationItemSelectedListener {
@@ -60,8 +60,6 @@ class HomeActivity(override val layoutId: Int = R.layout.activity_home) : BaseAc
         println(database.user.toString())
 
         setSupportActionBar(toolbar)
-       
-
 
         hasLocationPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
                 PackageManager.PERMISSION_GRANTED
@@ -281,7 +279,8 @@ class HomeActivity(override val layoutId: Int = R.layout.activity_home) : BaseAc
             }
 
             R.id.menu_ratings -> {
-                val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=io.euruapp"))
+                val i =
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=io.euruapp"))
                 if (i.resolveActivity(packageManager) != null)
                     startActivity(Intent.createChooser(i, null))
                 else

@@ -10,8 +10,11 @@ import io.euruapp.core.injection.ContextModule
 import io.euruapp.core.injection.DaggerAppComponent
 import io.euruapp.core.location.GPSTracker
 import io.euruapp.model.User
+import io.euruapp.modules.roomModule
 import io.euruapp.util.ConstantsUtils
 import io.euruapp.viewmodel.UserDatabase
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
 /**
  * [Application] class implementation for the Euru Android Client
@@ -33,6 +36,12 @@ class EuruApplication : Application() {
             .contextModule(ContextModule(this))
             .build()
         component.inject(this)
+
+        startKoin {
+            androidContext(this@EuruApplication)
+
+            modules(roomModule)
+        }
 
         //Get messaging instance
         messaging = FirebaseMessaging.getInstance()

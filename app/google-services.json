@@ -47,6 +47,14 @@
           }
         },
         {
+          "client_id": "487543559876-r2r4obm2pt1g3h6db538e4hlorejld70.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.euruapp",
+            "certificate_hash": "0098cdd131752fb12af8c85450d0fdc973e19769"
+          }
+        },
+        {
           "client_id": "487543559876-s1rba688015090n4ubbnjfe706oeddnk.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -264,31 +264,28 @@ class ProviderLoginActivity(override val layoutId: Int = R.layout.activity_provi
             _business, _phone, category.selectedItem.toString(), _desc, imageUri!!.toString(), geoPoints
         )
 
-        //Create hash map of user's data
         toggleLoading(true)
 
-        //Update user model
-        val hashMap = HashMap<String, Any>(0)
-        hashMap["name"] = user.getName()
-        //hashMap["profile"] = user.getProfile()
-        hashMap["phone"] = user.getPhone()
-
         //Store user in database
-        firestore.collection(ConstantsUtils.COLLECTION_USERS).document(user.key).update(hashMap)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    //Register business model after user's data has been successfully updated in the database
-                    createBusinessModel(business, user)
-                } else {
-                    toggleLoading(false)
-                    registerButton!!.isEnabled = true
-                    ConstantsUtils.showToast(
-                        this@ProviderLoginActivity,
-                        "An error occurred while updating the user information"
-                    )
-                }
+        firestore.collection(ConstantsUtils.COLLECTION_USERS).document(user.key).update(
+            mapOf<String, Any?>(
+                "name" to user.name,
+                "phone" to user.phone
+            )
+        ).addOnCompleteListener(this) { task ->
+            if (task.isSuccessful) {
+                ConstantsUtils.logResult("Creating Business model now...")
+                //Register business model after user's data has been successfully updated in the database
+                createBusinessModel(business, user)
+            } else {
+                toggleLoading(false)
+                registerButton!!.isEnabled = true
+                ConstantsUtils.showToast(
+                    this@ProviderLoginActivity,
+                    "An error occurred while updating the user information"
+                )
             }
-            .addOnFailureListener(this) { e ->
+        }.addOnFailureListener(this) { e ->
                 toggleLoading(false)
                 registerButton!!.isEnabled = true
                 ConstantsUtils.showToast(
@@ -393,12 +390,10 @@ class ProviderLoginActivity(override val layoutId: Int = R.layout.activity_provi
                 materialDialog.positiveButton(null, "Proceed") { materialDialog1 ->
                     materialDialog1.dismiss()
                     registerBusiness()
-                    Unit
                 }
                 materialDialog.negativeButton(null, "Change") { materialDialog1 ->
                     materialDialog1.dismiss()
                     pickLocation()
-                    Unit
                 }
                 materialDialog.cancelOnTouchOutside(false)
                 materialDialog.cancelable(false)
@@ -418,7 +413,6 @@ class ProviderLoginActivity(override val layoutId: Int = R.layout.activity_provi
             registerButton!!.isEnabled = true
             ConstantsUtils.showToast(this, e.localizedMessage)
         }
-
     }
 
     override fun onBackPressed() {

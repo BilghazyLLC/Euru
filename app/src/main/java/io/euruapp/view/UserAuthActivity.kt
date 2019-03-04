@@ -216,7 +216,7 @@ class UserAuthActivity(override val layoutId: Int = R.layout.activity_user_auth)
                     if (documents.isEmpty()) {
                         //No user data found, so we create a new one
                         val user = User(
-                            account.displayName, account.id, User.TYPE_CUSTOMER,
+                            account.displayName, account.id!!, User.TYPE_CUSTOMER,
                             account.photoUrl.toString(), null, EuruGeoPoint(geoPoint!!)
                         )
                         currentUser = user

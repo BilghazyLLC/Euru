@@ -81,6 +81,10 @@ class EuruFirebaseMessagingService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage?) {
 
         if (remoteMessage != null) {
+            // Debug notification
+            ConstantsUtils.logResult("Notification received with payload: ${remoteMessage.data}")
+
+
             val database = UserDatabase(applicationContext)
             if (database.isLoggedIn) {
                 //Create notification channel
