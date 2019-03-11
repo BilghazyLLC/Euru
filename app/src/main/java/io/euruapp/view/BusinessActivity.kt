@@ -170,55 +170,59 @@ class BusinessActivity(override val layoutId: Int = R.layout.activity_business) 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == RC_GET_IMAGE) {
-                uri = if (data != null) data.data else Uri.EMPTY
-                GlideApp.with(this)
-                    .load(uri)
-                    .placeholder(R.drawable.avatar_placeholder)
-                    .circleCrop()
-                    .into(avatar)
+            when (requestCode) {
+                RC_GET_IMAGE -> {
+                    uri = if (data != null) data.data else Uri.EMPTY
+                    GlideApp.with(this)
+                        .load(uri)
+                        .placeholder(R.drawable.avatar_placeholder)
+                        .circleCrop()
+                        .into(avatar)
 
-                toggleLoading(true)
-                ConstantsUtils.uploadImage(uri!!, OnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        uri = task.result
-                        business?.setImage(uri.toString())
-                        saveData()
-                    } else {
-                        toggleLoading(false)
-                        ConstantsUtils.showToast(this, "Unable to save business profile image")
-                    }
-                })
-            } else if (requestCode == RC_PICK_LOCATION) {
-                if (data == null) return
-                val place = PlacePicker.getPlace(this, data)
-                ConstantsUtils.logResult(place)
+                    toggleLoading(true)
+                    ConstantsUtils.uploadImage(uri!!, OnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            uri = task.result
+                            business?.setImage(uri.toString())
+                            saveData()
+                        } else {
+                            toggleLoading(false)
+                            ConstantsUtils.showToast(this, "Unable to save business profile image")
+                        }
+                    })
+                }
+                RC_PICK_LOCATION -> {
+                    if (data == null) return
+                    val place = PlacePicker.getPlace(this, data)
+                    ConstantsUtils.logResult(place)
 
-                val addresses: MutableList<EuruGeoPoint>? = business?.getAddresses()
-                val euruGeoPoint: EuruGeoPoint? = addresses?.get(0)
-                euruGeoPoint?.lat = place.latLng.latitude
-                euruGeoPoint?.lng = place.latLng.longitude
+                    val addresses: MutableList<EuruGeoPoint>? = business?.getAddresses()
+                    val euruGeoPoint: EuruGeoPoint? = addresses?.get(0)
+                    euruGeoPoint?.lat = place.latLng.latitude
+                    euruGeoPoint?.lng = place.latLng.longitude
 
-                //Replace with new address
-                addresses?.removeAt(0)
-                if (euruGeoPoint != null) addresses.add(euruGeoPoint)
+                    //Replace with new address
+                    addresses?.removeAt(0)
+                    if (euruGeoPoint != null) addresses.add(euruGeoPoint)
 
-                //Overwrite the current branches
-                business?.setAddresses(addresses)
-                saveData()
+                    //Overwrite the current branches
+                    business?.setAddresses(addresses)
+                    saveData()
 
-            } else if (requestCode == RC_EDIT_PROFILE) {
+                }
+                RC_EDIT_PROFILE -> {
 
-                val content = data!!.getStringExtra(EXTRA_DATA)
-                val i = data.getIntExtra(EditContentActivity.EXTRA_CONTENT_ID, 0)
-                when (i) {
-                    0 -> {
-                        name.text = content
-                        saveData()
-                    }
-                    1 -> {
-                        desc.text = content
-                        saveData()
+                    val content = data!!.getStringExtra(EXTRA_DATA)
+                    val i = data.getIntExtra(EditContentActivity.EXTRA_CONTENT_ID, 0)
+                    when (i) {
+                        0 -> {
+                            name.text = content
+                            saveData()
+                        }
+                        1 -> {
+                            desc.text = content
+                            saveData()
+                        }
                     }
                 }
             }
