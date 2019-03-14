@@ -6,7 +6,6 @@
              android:id="@+id/container"
              tools:context=".view.ServiceDetailsActivity"
              android:layout_height="match_parent">
-
     <include layout="@layout/loading"/>
 
     <androidx.appcompat.widget.Toolbar android:layout_width="match_parent"

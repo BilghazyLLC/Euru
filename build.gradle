@@ -56,7 +56,7 @@ buildscript {
 ext {
     // query git for the SHA, Tag and commit count. Use these to automate versioning.
     gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
-    gitCommitCount = Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
+    gitCommitCount = 152 + Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
 }
 
 allprojects {
