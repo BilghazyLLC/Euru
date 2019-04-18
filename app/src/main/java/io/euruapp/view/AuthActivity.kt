@@ -19,12 +19,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.GeoPoint
 import io.codelabs.util.bindView
 import io.euruapp.BuildConfig
 import io.euruapp.R
 import io.euruapp.core.BaseActivity
-import io.euruapp.model.EuruGeoPoint
 import io.euruapp.model.User
 import io.euruapp.util.ConstantsUtils
 import io.euruapp.util.ConstantsUtils.intentTo
@@ -83,8 +81,8 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
     private fun toggleLoading(show: Boolean) {
         TransitionManager.beginDelayedTransition(container!!)
         if (show) {
-            loading!!.visibility = View.VISIBLE
-            content!!.visibility = View.GONE
+            loading.visibility = View.VISIBLE
+            content.visibility = View.GONE
         } else {
             loading!!.visibility = View.GONE
             content!!.visibility = View.VISIBLE
@@ -200,51 +198,11 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                     val documents = task.result!!.documents
                     if (documents.isEmpty()) {
                         //No user data found, so we create a new one
-                        val user = User(
-                            firebaseUser.displayName,
-                            firebaseUser.uid,
-                            if (isProvider) User.TYPE_BUSINESS else User.TYPE_CUSTOMER,
-                            if (firebaseUser.photoUrl != null) firebaseUser.photoUrl.toString() else "",
-                            null,
-                            EuruGeoPoint(GeoPoint(tracker.latitude, tracker.longitude))
-                        )
 
-                        //Store user data in the database
-                        firestore.collection(ConstantsUtils.COLLECTION_USERS)
-                            .document(Objects.requireNonNull(firebaseUser.uid))
-                            .set(user)
-                            .addOnCompleteListener(this@AuthActivity) { task1 ->
-                                if (task1.isSuccessful) {
-                                    toggleLoading(false)
-                                    database.user = user
-                                    ConstantsUtils.showToast(
-                                        this@AuthActivity,
-                                        String.format("Hello there, %s", firebaseUser.displayName)
-                                    )
-
-                                    //Navigate the user to the provider login screen
-                                    if (response?.providerType == "phone" && user.name.isNullOrEmpty()) {
-                                        intentTo(
-                                            this@AuthActivity,
-                                            /*if (isProvider) ProviderLoginActivity::class.java else */
-                                            AccountCompletion::class.java
-                                        )
-                                        finish()
-                                    } else {
-                                        intentTo(
-                                            this@AuthActivity,
-                                            if (user.type == User.TYPE_BUSINESS) ProviderLoginActivity::class.java else HomeActivity::class.java
-                                        )
-                                    }
-                                } else {
-                                    toggleLoading(false)
-                                    ConstantsUtils.logResult("User data cannot be set")
-                                    ConstantsUtils.showToast(
-                                        this@AuthActivity,
-                                        "Account cannot be null. There was a problem in retrieving your account details"
-                                    )
-                                }
-                            }
+                        //todo: the following steps only apply to providers
+                        //todo: Step 1: go through collection of pending registration
+                        // todo: Step 2: if no user record is not found after step 1, then we will create a new account for the user
+                        // todo: Step 3:  store user information in the pending database reference
                     } else {
                         val snapshot = documents[0]
                         if (snapshot != null && snapshot.exists()) {

@@ -143,6 +143,7 @@ object ConstantsUtils {
     const val DATABASE_NAME = "euru_users.db"
     const val COLLECTION_BUSINESS = "euru_business"
     const val COLLECTION_USERS = "euru_users"
+    const val COLLECTION_PENDING_REGISTRATION = "euru_pending_approvals"
     const val COLLECTION_REQUESTS = "test_requests"
     const val COLLECTION_JOBS = "euru_jobs"
     const val COLLECTION_TOKENS = "euru_tokens"
