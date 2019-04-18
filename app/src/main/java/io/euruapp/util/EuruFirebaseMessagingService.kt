@@ -9,6 +9,7 @@ import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
 import androidx.core.app.NotificationCompat
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -91,6 +92,7 @@ class EuruFirebaseMessagingService : FirebaseMessagingService() {
                 createNotificationChannel()
 
                 when {
+                    // Start: User requests notification
                     remoteMessage.data.containsKey("day") && database.user?.type == User.TYPE_BUSINESS -> {
                         //Create intent to service details screen
                         val intent = Intent(applicationContext, ServiceDetailsActivity::class.java)
@@ -122,8 +124,12 @@ class EuruFirebaseMessagingService : FirebaseMessagingService() {
                         val textTitle = remoteMessage.data?.get("header")
                         val textContent = remoteMessage.data?.get("body")
 
-                        pushNotification(textTitle, textContent, pi)
+                        // Make sure sender does not receive the notification after sending the request
+                        if (database.user.key != /*FirebaseAuth.getInstance().uid*/ remoteMessage.data?.get("userKey")) {
+                            pushNotification(textTitle, textContent, pi)
+                        }
                     }
+                    // End: User requests notification
 
                     remoteMessage.data.containsKey("providerKey") && database.user.type != User.TYPE_BUSINESS -> {
                         //Create intent to service provider details screen

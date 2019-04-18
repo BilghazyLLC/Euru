@@ -7,8 +7,7 @@
 	android:orientation="vertical"
 			  android:paddingTop="@dimen/spacing_normal"
 	android:background="@android:color/white"
-	android:foreground="?android:attr/selectableItemBackgroundBorderless"
-	>
+	android:foreground="?android:attr/selectableItemBackgroundBorderless">
 	
 	<io.codelabs.widget.ForegroundImageView
 		android:id="@+id/business_picture"
@@ -18,12 +17,12 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 	
-	<TextView
+	<io.codelabs.widget.BaselineGridTextView
 		android:id="@+id/business_name"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:ellipsize="end"
-		android:fontFamily="@font/noto_sans"
+		app:fontFamily="@font/noto_sans"
 		android:maxLines="2"
 		android:gravity="center_horizontal"
 		android:textColor="@color/text_secondary_dark"
