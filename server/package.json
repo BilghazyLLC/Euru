@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Euru Website and cloud services",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BilghazyLLC",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^5.9.4",
+    "validator": "^10.11.0"
+  }
+}
