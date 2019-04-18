@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Job Requests</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <!--     Fonts and icons     -->
@@ -24,16 +24,16 @@
                     Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
                 -->
             <div class="logo">
-                <a href="./dashboard.html" class="simple-text logo-mini">
-                    <img src="./assets/img/favicon.png" alt="" srcset="">
-                </a>
+                <!-- <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+                    CT
+                </a> -->
                 <a href="dashboard.html" class="simple-text logo-normal">
                     Euru Admin
                 </a>
             </div>
             <div class="sidebar-wrapper" id="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active ">
+                    <li>
                         <a href="./dashboard.html">
                             <i class="now-ui-icons design_app"></i>
                             <p>Dashboard</p>
@@ -45,7 +45,7 @@
                             <p>Service providers</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active ">
                         <a href="./requests.html">
                             <i class="now-ui-icons location_map-big"></i>
                             <p>Job Requests</p>
@@ -72,7 +72,7 @@
                                 <span class="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="./dashboard.html">Dashboard</a>
+                        <a class="navbar-brand" href="./requests.html">Job Requests</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,42 +109,8 @@
                 </div>
             </nav>
             <!-- End Navbar -->
-            <div class="panel-header panel-header-lg">
-                <canvas id="bigDashboardChart"></canvas>
-            </div>
+            <div class="panel-header panel-header-lg"></div>
             <div class="content">
-                <div class="row">
-                    <!-- Load all users -->
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-category">User Information Tab</h5>
-                                <h4 class="card-title">All Registered Users</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class=" text-primary">
-                                            <th>
-                                                Name
-                                            </th>
-                                            <th>
-                                                Created On
-                                            </th>
-                                            <th>
-                                                Unique Key
-                                            </th>
-                                            <th>
-                                                User Type
-                                            </th>
-                                        </thead>
-                                        <tbody id="user-table"></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">

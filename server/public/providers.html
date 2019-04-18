@@ -24,22 +24,22 @@
                     Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
                 -->
             <div class="logo">
-                <a href="./dashboard.html" class="simple-text logo-mini">
-                    <img src="./assets/img/favicon.png" alt="" srcset="">
-                </a>
+                <!-- <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+                    CT
+                </a> -->
                 <a href="dashboard.html" class="simple-text logo-normal">
                     Euru Admin
                 </a>
             </div>
             <div class="sidebar-wrapper" id="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active ">
+                    <li>
                         <a href="./dashboard.html">
                             <i class="now-ui-icons design_app"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active ">
                         <a href="./providers.html">
                             <i class="now-ui-icons education_atom"></i>
                             <p>Service providers</p>
@@ -72,7 +72,7 @@
                                 <span class="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="./dashboard.html">Dashboard</a>
+                        <a class="navbar-brand" href="./providers.html">Pending Service Providers</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,19 +109,20 @@
                 </div>
             </nav>
             <!-- End Navbar -->
-            <div class="panel-header panel-header-lg">
-                <canvas id="bigDashboardChart"></canvas>
-            </div>
+
+            <div class="panel-header panel-header-lg"></div>
             <div class="content">
                 <div class="row">
                     <!-- Load all users -->
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-category">User Information Tab</h5>
-                                <h4 class="card-title">All Registered Users</h4>
+                                <h4 class="card-title">Pending Approvals</h4>
+                                <h5 class="card-category">The service providers below are pending approvals for their
+                                    registration</h5>
                             </div>
                             <div class="card-body">
+                                <p id="loading" class="text-center ml-auto mr-auto">Fetching data....</p>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead class=" text-primary">
@@ -138,7 +139,7 @@
                                                 User Type
                                             </th>
                                         </thead>
-                                        <tbody id="user-table"></tbody>
+                                        <tbody id="table-content"></tbody>
                                     </table>
                                 </div>
                             </div>
@@ -146,6 +147,7 @@
                     </div>
                 </div>
             </div>
+
             <footer class="footer">
                 <div class="container-fluid">
                     <nav>
@@ -221,7 +223,7 @@
 
 <!-- index js -->
 <script src="./assets/js/global.js"></script>
-<script src="./assets/js/dashboard.js"></script>
+<script src="./assets/js/providers.js"></script>
 </body>
 
 </html>
