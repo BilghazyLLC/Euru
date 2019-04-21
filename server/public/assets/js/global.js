@@ -9,8 +9,21 @@ const logout = () => {
         window.location.href = "index.html"
     }).catch((err) => {
         console.log(err.message);
-        
     });
+};
+
+$(document).ready(() => {
+    // Search form
+    $('#search-form').submit((ev) => {
+        ev.preventDefault();
+        searchFor();
+    });
+});
+
+const searchFor = () => {
+    var query = $('#search-input');
+    alert(query.val());
+    query.val('');
 };
 
 // 
