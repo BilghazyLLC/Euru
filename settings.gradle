@@ -1,1 +1,1 @@
-include ':app',':codelabsdk',':bypass'
+include ':app'

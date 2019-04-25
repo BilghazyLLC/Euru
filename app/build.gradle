@@ -64,16 +64,15 @@ dependencies {
     implementation "androidx.palette:palette:$androidx_version"
     implementation "androidx.legacy:legacy-support-v4:$androidx_version"
 
-    //CodeLabs
-    implementation project(':codelabsdk')
-
     //evernote
     implementation "com.evernote:android-job:$evernote"
 
     //app intro
-
     //    implementation 'com.github.paolorotolo:appintro:v5.0.1'
     implementation 'com.github.paolorotolo:appintro:v5.1.0'
+
+    // Codelabs
+    implementation 'com.github.Quabynah-Codelabs.quabynah-codelabs-sdk:sdk-library:v1.3.5.1'
 
     //image cropper tool
     implementation "com.theartofdev.edmodo:android-image-cropper:$cropper_tool_version"
