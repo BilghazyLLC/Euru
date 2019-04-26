@@ -16,7 +16,7 @@ abstract class BaseFragment : Fragment() {
     lateinit var firestore: FirebaseFirestore
     lateinit var storage: StorageReference
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
 
         (requireActivity().application as EuruApplication).component.inject(this)
