@@ -72,8 +72,11 @@
                 android:name="io.euruapp.view.MapsActivity"
                 android:configChanges="orientation|screenSize|screenLayout"
                 android:label="@string/title_activity_maps"/>
+
         <activity android:name="io.euruapp.view.ProviderLoginActivity"/>
+
         <activity android:name="io.euruapp.view.CategoryDetailsActivity"/>
+
         <activity
                 android:name="io.euruapp.view.SplashActivity"
                 android:configChanges="screenLayout|screenSize|orientation"
@@ -84,6 +87,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
                 android:name="io.euruapp.view.OnboardingActivity"
                 android:configChanges="screenLayout|screenSize|orientation"

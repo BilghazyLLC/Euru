@@ -279,4 +279,5 @@ class EuruFirebaseMessagingService : FirebaseMessagingService() {
         private val NOTIFICATION_ID = Random(3).nextInt()
         private const val RC_NOTIFICATION = 1
     }
+
 }

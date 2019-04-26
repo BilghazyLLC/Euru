@@ -28,7 +28,7 @@ public abstract class SearchRepository extends BaseDataManager<List<? extends Eu
 	private FirebaseFirestore firestore;
 	private Map<String, Task<QuerySnapshot>> inflight = new HashMap<String, Task<QuerySnapshot>>(0);
 	
-	public SearchRepository(@NotNull Context context, BaseActivity activity) {
+	public SearchRepository(@NotNull Context context, @NotNull BaseActivity activity) {
 		super(context);
 		this.activity = activity;
 		this.firestore = activity.getFirestore();
