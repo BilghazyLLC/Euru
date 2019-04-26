@@ -20,6 +20,7 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.GeoPoint
+import io.codelabs.util.bindView
 import io.euruapp.BuildConfig
 import io.euruapp.R
 import io.euruapp.core.BaseActivity
@@ -80,13 +81,13 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
     }
 
     private fun toggleLoading(show: Boolean) {
-        TransitionManager.beginDelayedTransition(container!!)
+        TransitionManager.beginDelayedTransition(container)
         if (show) {
             loading.visibility = View.VISIBLE
             content.visibility = View.GONE
         } else {
-            loading!!.visibility = View.GONE
-            content!!.visibility = View.VISIBLE
+            loading.visibility = View.GONE
+            content.visibility = View.VISIBLE
         }
     }
 
@@ -216,7 +217,7 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
 
                             ConstantsUtils.showToast(
                                 this@AuthActivity,
-                                String.format("Welcome back, %s", firebaseUser.displayName)
+                                String.format("Welcome back, %s", firebaseUser.displayName ?: firebaseUser.phoneNumber ?: firebaseUser.email)
                             )
 
                             intentTo(this@AuthActivity, HomeActivity::class.java)
