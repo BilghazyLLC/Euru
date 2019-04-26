@@ -48,7 +48,7 @@
             tools:src="@drawable/placeholderuser"/>
 
     <ImageView android:layout_width="match_parent"
-               android:layout_height="@dimen/about_header_height_small"
+               android:layout_height="@dimen/about_peek_height_minus"
                android:id="@+id/job_image"
                android:scaleType="centerCrop"
                android:src="@color/content_placeholder"

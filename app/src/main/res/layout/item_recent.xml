@@ -57,7 +57,7 @@
 		android:layout_marginStart="@dimen/padding_normal"
 		android:layout_marginTop="@dimen/spacing_normal"
 		android:src="@drawable/avatar_placeholder"
-		android:tint="@color/colorGreen"
+		android:tint="@color/green"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintStart_toEndOf="@id/model_view"
 		app:layout_constraintTop_toBottomOf="@id/model_title" />

@@ -23,8 +23,8 @@
 		
 		<io.codelabs.widget.ForegroundImageView
 			android:id="@+id/header_logo"
-			android:layout_width="@dimen/avatar_logo"
-			android:layout_height="@dimen/avatar_logo"
+			android:layout_width="@dimen/large_avatar_size"
+			android:layout_height="@dimen/large_avatar_size"
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentTop="true"
 			android:src="@drawable/avatar_placeholder" />

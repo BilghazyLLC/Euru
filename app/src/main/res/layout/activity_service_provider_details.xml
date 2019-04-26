@@ -147,7 +147,7 @@
                                                              android:textColor="@color/text_secondary_dark"/>
 
                     <fragment android:layout_width="match_parent"
-                              android:layout_height="@dimen/about_header_height_small"
+                              android:layout_height="@dimen/about_peek_height_minus"
                               android:name="com.google.android.gms.maps.SupportMapFragment"
                               android:layout_marginTop="@dimen/spacing_normal"
                               android:id="@+id/request_location_map"/>

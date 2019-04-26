@@ -116,9 +116,14 @@
       // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
       // // The Firebase SDK is initialized and available here!
       //
-      // firebase.auth().onAuthStateChanged(user => { });
+      firebase.auth().onAuthStateChanged(user => {
+        console.log(user.uid);
+      });
       // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-      // firebase.messaging().requestPermission().then(() => { });
+      firebase.messaging().requestPermission().then(() => {
+        console.log("Permission requested for messaging");
+
+      });
       // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
       //
       // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
