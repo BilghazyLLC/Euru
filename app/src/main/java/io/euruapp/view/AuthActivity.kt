@@ -187,7 +187,7 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
             toggleLoading(false)
             ConstantsUtils.showToast(
                 this,
-                "Account cannot be null. There was a problem in retrieving your account details"
+                "There was a problem in retrieving your account details"
             )
             return
         }
@@ -237,7 +237,7 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                     ConstantsUtils.logResult("User data not found for key: " + firebaseUser.uid)
                     ConstantsUtils.showToast(
                         this@AuthActivity,
-                        "Account cannot be null. There was a problem in retrieving your account details"
+                        "There was a problem in retrieving your account details"
                     )
                 }
             }
