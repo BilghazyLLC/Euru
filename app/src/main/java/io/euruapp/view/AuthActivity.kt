@@ -104,8 +104,8 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                 .createSignInIntentBuilder()
                 .setLogo(R.drawable.app_logo)
                 .setTosAndPrivacyPolicyUrls(
-                    "https://superapp.example.com/terms-of-service.html",
-                    "https://superapp.example.com/privacy-policy.html"
+                    "https://bilghazy.firebaseapp.com/tos.html",
+                    "https://bilghazy.firebaseapp.com/privacy.html"
                 )
                 .setIsSmartLockEnabled(!BuildConfig.DEBUG /* credentials */, true /* hints */)
                 .setAvailableProviders(
@@ -134,8 +134,8 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                 .createSignInIntentBuilder()
                 .setLogo(R.drawable.app_logo)
                 .setTosAndPrivacyPolicyUrls(
-                    "https://superapp.example.com/terms-of-service.html",
-                    "https://superapp.example.com/privacy-policy.html"
+                    "https://bilghazy.firebaseapp.com/tos.html",
+                    "https://bilghazy.firebaseapp.com/privacy.html"
                 )
                 .setIsSmartLockEnabled(!BuildConfig.DEBUG /* credentials */, true /* hints */)
                 .setAvailableProviders(
