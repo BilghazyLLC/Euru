@@ -9,7 +9,6 @@ import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
 import androidx.core.app.NotificationCompat
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -19,6 +18,7 @@ import io.euruapp.core.BaseActivity
 import io.euruapp.core.location.GPSTracker
 import io.euruapp.model.Business
 import io.euruapp.model.User
+import io.euruapp.view.AuthActivity
 import io.euruapp.view.ServiceDetailsActivity
 import io.euruapp.view.ServiceProviderDetailsActivity
 import io.euruapp.viewmodel.UserDatabase
@@ -211,6 +211,25 @@ class EuruFirebaseMessagingService : FirebaseMessagingService() {
                             }
 
                         }
+                    }
+
+                    // Account approvals
+                    remoteMessage.data.containsKey("type") && remoteMessage.data.containsKey("approved") && database.user?.type == User.TYPE_BUSINESS -> {
+                        val intent = Intent(applicationContext, AuthActivity::class.java)
+
+                        //Create pending intent for activity
+                        val pi = PendingIntent.getActivity(
+                            applicationContext,
+                            RC_NOTIFICATION,
+                            intent,
+                            PendingIntent.FLAG_UPDATE_CURRENT
+                        )
+
+                        pushNotification(
+                            "Account Approval Complete",
+                            remoteMessage.data["message"] ?: "Please sign in again to get started. Enjoy Euru!",
+                            pi
+                        )
                     }
 
                     else -> {
