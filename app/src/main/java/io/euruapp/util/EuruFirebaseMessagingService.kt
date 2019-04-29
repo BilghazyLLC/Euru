@@ -214,7 +214,7 @@ class EuruFirebaseMessagingService : FirebaseMessagingService() {
                     }
 
                     // Account approvals
-                    remoteMessage.data.containsKey("type") && remoteMessage.data.containsKey("approved") && database.user?.type == User.TYPE_BUSINESS -> {
+                    remoteMessage.data.containsKey("approved") && database.user?.type == User.TYPE_BUSINESS -> {
                         val intent = Intent(applicationContext, AuthActivity::class.java)
 
                         //Create pending intent for activity
