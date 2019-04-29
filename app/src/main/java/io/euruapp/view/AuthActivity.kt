@@ -199,15 +199,15 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                 if (task.isSuccessful && task.result != null) {
                     val documents = task.result!!.documents
                     if (documents.isEmpty()) {
-                        //No user data found, so we create a new one
-
+                        ConstantsUtils.logResult("No documents found for the current user...")
+                        //No user data found, so we query for pending approvals
                         if (isProvider) {
                             getPendingAccountForUser(firebaseUser)
                             return@addOnCompleteListener
                         }
 
+                        // Create a new account for users who are not service providers
                         createNewUser(firebaseUser)
-
                     } else {
                         val snapshot = documents[0]
                         if (snapshot != null && snapshot.exists()) {
@@ -217,7 +217,10 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
 
                             ConstantsUtils.showToast(
                                 this@AuthActivity,
-                                String.format("Welcome back, %s", firebaseUser.displayName ?: firebaseUser.phoneNumber ?: firebaseUser.email)
+                                String.format(
+                                    "Welcome back, %s",
+                                    firebaseUser.displayName ?: firebaseUser.phoneNumber ?: firebaseUser.email
+                                )
                             )
 
                             intentTo(this@AuthActivity, HomeActivity::class.java)
@@ -299,7 +302,10 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                     database.user = user
                     ConstantsUtils.showToast(
                         this@AuthActivity,
-                        String.format("Hello there, %s", firebaseUser.displayName ?: firebaseUser.phoneNumber ?: firebaseUser.email)
+                        String.format(
+                            "Hello there, %s",
+                            firebaseUser.displayName ?: firebaseUser.phoneNumber ?: firebaseUser.email
+                        )
                     )
 
                     //Navigate the user to the provider login screen
@@ -342,7 +348,7 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                                 firebaseUser.displayName ?: firebaseUser.email ?: firebaseUser.phoneNumber
                             )
                         )
-                    } else createNewUser(firebaseUser)
+                    } else createNewUser(firebaseUser, true)
                 }
             }
 
