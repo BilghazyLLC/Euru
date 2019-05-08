@@ -22,7 +22,8 @@ public class Category implements Parcelable {
 		dest.writeString(name);
 		dest.writeString(image);
 	}
-	
+
+
 	@Override
 	public int describeContents() {
 		return 0;
@@ -41,7 +42,7 @@ public class Category implements Parcelable {
 	};
 	
 	//CATEGORIES
-	public static final String ARCHITECT = "Architect";
+	public static final String SEPTIC_WASTE = "Septic_waste";
 	public static final String AUTO_SERVICE = "Auto Service";
 	public static final String BEAUTY = "Beauty & fashion";
 	public static final String CLEANERS = "Cleaners";

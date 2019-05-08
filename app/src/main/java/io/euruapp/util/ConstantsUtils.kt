@@ -33,7 +33,7 @@ object ConstantsUtils {
     val categories = mutableListOf<Category>(
 
         Category(
-            Category.ARCHITECT,
+            Category.SEPTIC_WASTE,
             "https://firebasestorage.googleapis.com/v0/b/bilghazyllc.appspot.com/o/service_uploads%2FWhatsApp%20Image%202018-11-05%20at%2012.14.50%20AM.jpeg?alt=media&token=f89a23e2-f17a-44f5-86a6-12274512f95b"
         ),
         Category(

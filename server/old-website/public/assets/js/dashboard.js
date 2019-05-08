@@ -86,7 +86,7 @@ $(document).ready(() => {
     results.then((response) => {
         response.forEach(user => {
             $('#user-table').append(`
-                <tr>
+                <tr data-href="${user.key}">
                     <td>
                         
                         ${user.name}
@@ -105,6 +105,11 @@ $(document).ready(() => {
                     </td>
                 </tr>
                 `);
+        });
+
+        $(document).on('click', 'tr[data-href]', function (ev) {
+            ev.preventDefault();
+            alert(this.dataset.href)
         });
     })
     initDashboardPageCharts();

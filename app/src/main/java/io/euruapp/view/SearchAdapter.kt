@@ -15,7 +15,7 @@ import io.euruapp.model.EuruSearchableItem
 import io.euruapp.model.User
 import io.euruapp.util.ConstantsUtils
 import io.euruapp.util.OnSearchableItemClickListener
-import io.euruapp.util.glide.GlideApp
+import io.codelabs.sdk.glide.GlideApp
 import java.util.*
 
 class SearchAdapter(

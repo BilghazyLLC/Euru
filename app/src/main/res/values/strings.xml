@@ -1,28 +1,32 @@
 <resources>
-	<string name="app_name">Euru</string>
-	<string name="close_drawer">Close drawer</string>
-	<string name="open_drawer">Open drawer</string>
-	<string name="welcome_to_euru">Welcome to Euru</string>
-	<string name="euru_client_id">472230636098-e16odhgntjko1oj266mdk0f38i660iug.apps.googleusercontent.com</string>
-	<string name="business_name">Business Name</string>
-	<string name="address">Address</string>
-	<string name="business_desc">Short notes on what the business is about</string>
-	<string name="title_activity_maps">Map</string>
-	<string name="person_name">Username</string>
-	<string name="save_and_continue">Save and continue</string>
-	<string name="my_business_es">My Business(es)</string>
-	
-	<!-- TODO: Remove or change this placeholder text -->
-	<string name="hello_blank_fragment">Hello blank fragment</string>
-	
-	<!--Notification default channel-->
-	<string name="default_notification_channel_id">euru_default_channel</string>
+    <string name="app_name">Euru</string>
+    <string name="close_drawer">Close drawer</string>
+    <string name="open_drawer">Open drawer</string>
+    <string name="welcome_to_euru">Welcome to Euru</string>
+    <string name="euru_client_id">472230636098-e16odhgntjko1oj266mdk0f38i660iug.apps.googleusercontent.com</string>
+    <string name="business_name">Business Name</string>
+    <string name="address">Address</string>
+    <string name="business_desc">Short notes on what the business is about</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="person_name">Username</string>
+    <string name="save_and_continue">Save and continue</string>
+    <string name="my_business_es">My Business(es)</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Notification default channel-->
+    <string name="default_notification_channel_id">euru_default_channel</string>
     <string name="category">Select a category</string>
-    <string name="request_service_title">Describe what kind of service you require from \'%s\' with just a click on the image and entering text below</string>
-	<string name="dummy_about">This is a very short description about the way this application works. But hey, who cares?</string>
+    <string name="request_service_title">Describe what kind of service you require from \'%s\' with just a click on the
+        image and entering text below
+    </string>
+    <string name="dummy_about">This is a very short description about the way this application works. But hey, who
+        cares?
+    </string>
     <string name="jobs">Jobs details</string>
     <string name="start_job">Start job</string>
-	<string name="finish_job">Finish Job</string>
+    <string name="finish_job">Finish Job</string>
     <string name="loading">Loading…</string>
     <string name="pending_approval_text">Hello, %s! Your registration is pending approval. You will be notified once
         this process is complete (NB: Approval may take up to 48 hours so please be patient). Thank you for your

@@ -22,7 +22,7 @@ import io.euruapp.util.ConstantsUtils
 import io.euruapp.util.ConstantsUtils.ProviderJobType
 import io.euruapp.util.ConstantsUtils.intentTo
 import io.euruapp.util.JobClickListener
-import io.euruapp.util.glide.GlideApp
+import io.codelabs.sdk.glide.GlideApp
 import kotlinx.android.synthetic.main.item_job.view.*
 import java.util.*
 

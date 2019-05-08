@@ -4,7 +4,6 @@
           package="io.euruapp"
           android:installLocation="auto">
 
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -24,7 +23,7 @@
             android:required="false"/>
 
     <application
-            android:name="io.euruapp.core.EuruApplication"
+            android:name=".core.EuruApplication"
             android:allowBackup="true"
             android:appComponentFactory="@string/app_name"
             android:icon="@mipmap/ic_launcher"
@@ -34,51 +33,52 @@
             android:theme="@style/Euru.Theme"
             tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:appComponentFactory">
+        <activity android:name=".view.PendingRegistrationActivity">
+        </activity>
 
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <uses-library
+                android:name="org.apache.http.legacy"
+                android:required="false"/>
 
         <meta-data
                 android:name="com.google.android.geo.API_KEY"
                 android:value="@string/google_maps_key"/>
 
-        <service android:name="io.euruapp.util.EuruFirebaseMessagingService">
+        <service android:name=".util.EuruFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
         <service
-                android:name="io.euruapp.util.ServiceRequestReceiver"
-                android:exported="false"/>
-
-        <!--suppress AndroidDomInspection -->
-        <service android:name="io.euruapp.core.location.GPSTracker"/>
-
-        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
-     See README(https://goo.gl/l4GJaQ) for more. -->
+                android:name=".util.ServiceRequestReceiver"
+                android:exported="false"/> <!-- suppress AndroidDomInspection -->
+        <service android:name=".core.location.GPSTracker"/>
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more.
+        -->
         <meta-data
                 android:name="com.google.firebase.messaging.default_notification_icon"
                 android:resource="@drawable/ic_stat_notification_icon"/>
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
         <meta-data
                 android:name="com.google.firebase.messaging.default_notification_color"
                 android:resource="@color/colorAccent"/>
-
         <meta-data
                 android:name="com.google.firebase.messaging.default_notification_channel_id"
                 android:value="@string/default_notification_channel_id"/>
 
         <activity
-                android:name="io.euruapp.view.MapsActivity"
+                android:name=".view.MapsActivity"
                 android:configChanges="orientation|screenSize|screenLayout"
                 android:label="@string/title_activity_maps"/>
-
-        <activity android:name="io.euruapp.view.ProviderLoginActivity"/>
-
-        <activity android:name="io.euruapp.view.CategoryDetailsActivity"/>
-
+        <activity android:name=".view.ProviderLoginActivity"/>
+        <activity android:name=".view.CategoryDetailsActivity"/>
         <activity
-                android:name="io.euruapp.view.SplashActivity"
+                android:name=".view.SplashActivity"
                 android:configChanges="screenLayout|screenSize|orientation"
                 android:theme="@style/Euru.Theme.Fullscreen">
             <intent-filter>
@@ -87,29 +87,27 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity
-                android:name="io.euruapp.view.OnboardingActivity"
+                android:name=".view.OnboardingActivity"
                 android:configChanges="screenLayout|screenSize|orientation"
                 android:theme="@style/Euru.Theme.Fullscreen"/>
         <activity
-                android:name="io.euruapp.view.AuthActivity"
+                android:name=".view.AuthActivity"
                 android:configChanges="screenLayout|screenSize|orientation"/>
         <activity
-                android:name="io.euruapp.view.HomeActivity"
+                android:name=".view.HomeActivity"
                 android:configChanges="screenLayout|screenSize|orientation"
                 android:screenOrientation="portrait"/>
-        <activity android:name="io.euruapp.view.SearchActivity"/>
-        <activity android:name="io.euruapp.view.UserAuthActivity"/>
-        <activity android:name="io.euruapp.view.RequestServiceActivity"/>
-        <activity android:name="io.euruapp.view.ProviderDetailsActivity"/>
-        <activity android:name="io.euruapp.view.BusinessActivity"/>
-        <activity android:name="io.euruapp.view.EditContentActivity"/>
-        <activity android:name="io.euruapp.view.JobsActivity"/>
-        <activity android:name="io.euruapp.view.AccountCompletion"/>
-        <activity android:name="io.euruapp.view.ServiceDetailsActivity"/>
-        <activity android:name="io.euruapp.view.ServiceProviderDetailsActivity"/>
-
+        <activity android:name=".view.SearchActivity"/>
+        <activity android:name=".view.UserAuthActivity"/>
+        <activity android:name=".view.RequestServiceActivity"/>
+        <activity android:name=".view.ProviderDetailsActivity"/>
+        <activity android:name=".view.BusinessActivity"/>
+        <activity android:name=".view.EditContentActivity"/>
+        <activity android:name=".view.JobsActivity"/>
+        <activity android:name=".view.AccountCompletion"/>
+        <activity android:name=".view.ServiceDetailsActivity"/>
+        <activity android:name=".view.ServiceProviderDetailsActivity"/>
     </application>
 
 </manifest>

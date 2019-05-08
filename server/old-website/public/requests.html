@@ -110,7 +110,45 @@
             </nav>
             <!-- End Navbar -->
             <div class="panel-header panel-header-lg"></div>
+         
             <div class="content">
+
+                    <div class="content">
+                            <div class="row">
+                                <!-- Load all users -->
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Euru Service Requests</h4>
+                                            <h5 class="card-category">Request From Euru Customers
+                                                </h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p id="loading" class="text-center ml-auto mr-auto">Fetching data....</p>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead class=" text-primary">
+                                                        <th>
+                                                            Name
+                                                        </th>
+                                                        <th>
+                                                            Created On
+                                                        </th>
+                                                        <th>
+                                                            Unique Key
+                                                        </th>
+                                                        <th>
+                                                            User Type
+                                                        </th>
+                                                    </thead>
+                                                    <tbody id="table-content"></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
@@ -188,6 +226,7 @@
 <!-- index js -->
 <script src="./assets/js/global.js"></script>
 <script src="./assets/js/dashboard.js"></script>
+<script src="./assets/js/requests.js"></script>
 </body>
 
 </html>

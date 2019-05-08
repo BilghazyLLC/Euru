@@ -26,7 +26,7 @@ import io.euruapp.core.BaseActivity
 import io.euruapp.model.RequestModel
 import io.euruapp.model.User
 import io.euruapp.util.ConstantsUtils
-import io.euruapp.util.glide.GlideApp
+import io.codelabs.sdk.glide.GlideApp
 import kotlinx.android.synthetic.main.activity_service_provider_details.*
 import java.util.*
 

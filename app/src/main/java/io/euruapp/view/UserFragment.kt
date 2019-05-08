@@ -16,7 +16,7 @@ import io.euruapp.core.BaseActivity
 import io.euruapp.core.BaseFragment
 import io.euruapp.model.User
 import io.euruapp.util.ConstantsUtils
-import io.euruapp.util.glide.GlideApp
+import io.codelabs.sdk.glide.GlideApp
 import kotlinx.android.synthetic.main.fragment_user.*
 import java.util.*
 

@@ -32,7 +32,7 @@ $(document).ready(() => {
                                 ${user.type === 'TYPE_CUSTOMER' ? 'Customer' : 'Service Provider'}
                             </td>
                             <td class="text-center">
-                                <a href="#user" class="btn btn-info">Copy Key</a>
+                                <a href="#user" class="btn btn-info" onclick"moveToParticulars()">View Particulars</a>
                             </td>
                         </tr>
                         `);
@@ -45,4 +45,11 @@ $(document).ready(() => {
         }).catch((err) => {
             console.log(err.message);
         });
+
+        moveToParticulars(){
+            Dashboard = "particulars";
+
+
+
+        }
 })

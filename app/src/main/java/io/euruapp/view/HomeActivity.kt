@@ -33,7 +33,7 @@ import io.euruapp.core.BaseActivity
 import io.euruapp.model.Business
 import io.euruapp.model.User
 import io.euruapp.util.ConstantsUtils
-import io.euruapp.util.glide.GlideApp
+import io.codelabs.sdk.glide.GlideApp
 import io.euruapp.viewmodel.UserDatabase
 import pub.devrel.easypermissions.EasyPermissions
 import java.util.*

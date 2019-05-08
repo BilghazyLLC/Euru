@@ -22,7 +22,7 @@ import io.euruapp.core.BaseActivity
 import io.euruapp.model.Business
 import io.euruapp.model.EuruGeoPoint
 import io.euruapp.util.ConstantsUtils
-import io.euruapp.util.glide.GlideApp
+import io.codelabs.sdk.glide.GlideApp
 import java.util.*
 
 class BusinessActivity(override val layoutId: Int = R.layout.activity_business) : BaseActivity() {

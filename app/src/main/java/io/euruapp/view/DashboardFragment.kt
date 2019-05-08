@@ -15,7 +15,7 @@ import io.euruapp.R
 import io.euruapp.core.BaseFragment
 import io.euruapp.model.User
 import io.euruapp.util.ConstantsUtils
-import io.euruapp.util.glide.GlideApp
+import io.codelabs.sdk.glide.GlideApp
 
 /**
  * A simple [BaseFragment] subclass.

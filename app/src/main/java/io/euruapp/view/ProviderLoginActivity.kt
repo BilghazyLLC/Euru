@@ -34,7 +34,7 @@ import io.euruapp.model.EuruGeoPoint
 import io.euruapp.model.User
 import io.euruapp.util.ConstantsUtils
 import io.euruapp.util.ConstantsUtils.intentTo
-import io.euruapp.util.glide.GlideApp
+import io.codelabs.sdk.glide.GlideApp
 import kotlinx.android.synthetic.main.activity_provider_login.*
 import pub.devrel.easypermissions.EasyPermissions
 import java.util.*
@@ -93,7 +93,7 @@ class ProviderLoginActivity(override val layoutId: Int = R.layout.activity_provi
         username.setText(databaseUser.name?.trim { it <= ' ' } ?: "")
 
         val categories = arrayOf(
-            Category.ARCHITECT,
+            Category.SEPTIC_WASTE,
             Category.AUTO_SERVICE,
             Category.BEAUTY,
             Category.CLEANERS,

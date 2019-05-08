@@ -21,7 +21,7 @@ import io.euruapp.R
 import io.euruapp.model.Category
 import io.euruapp.util.ConstantsUtils
 import io.euruapp.util.OnSearchableItemClickListener
-import io.euruapp.util.glide.GlideApp
+import io.codelabs.sdk.glide.GlideApp
 
 class HomeFragment : Fragment(), OnSearchableItemClickListener<Category> {
     private val grid: RecyclerView by bindView(R.id.grid)

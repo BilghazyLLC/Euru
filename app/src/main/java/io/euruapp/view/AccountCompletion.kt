@@ -13,6 +13,7 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import androidx.transition.TransitionManager
 import com.google.android.material.snackbar.Snackbar
+import io.codelabs.sdk.glide.GlideApp
 import io.codelabs.util.bindView
 import io.codelabs.widget.CircularImageView
 import io.euruapp.R
@@ -20,7 +21,6 @@ import io.euruapp.core.BaseActivity
 import io.euruapp.model.User
 import io.euruapp.util.ConstantsUtils.COLLECTION_USERS
 import io.euruapp.util.ConstantsUtils.intentTo
-import io.euruapp.util.glide.GlideApp
 
 class AccountCompletion(override val layoutId: Int = R.layout.activity_account_completion) : BaseActivity() {
     private val username: EditText by bindView(R.id.username)
