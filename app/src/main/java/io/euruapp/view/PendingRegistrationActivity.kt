@@ -1,13 +1,15 @@
 package io.euruapp.view
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import io.euruapp.R
+import io.euruapp.core.BaseActivity
 
-class PendingRegistrationActivity : AppCompatActivity() {
+class PendingRegistrationActivity(override val layoutId: Int = R.layout.activity_pending_registration) :
+    BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pending_registration)
+    override fun onViewCreated(intent: Intent, instanceState: Bundle?) {
+
     }
+
 }

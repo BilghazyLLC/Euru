@@ -273,13 +273,8 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                 .addOnCompleteListener(this@AuthActivity) { task1 ->
                     if (task1.isSuccessful) {
                         toggleLoading(false)
-                        ConstantsUtils.showToast(
-                            this@AuthActivity,
-                            String.format(
-                                getString(R.string.pending_approval_text),
-                                firebaseUser.displayName ?: firebaseUser.email ?: firebaseUser.phoneNumber
-                            )
-                        )
+                        //todo: add prefs here
+                        intentTo(this,PendingRegistrationActivity::class.java)
 
                     } else {
                         toggleLoading(false)
