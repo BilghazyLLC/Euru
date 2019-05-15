@@ -30,7 +30,6 @@ import io.euruapp.model.User
 import io.euruapp.util.ConstantsUtils
 import io.euruapp.util.ConstantsUtils.intentTo
 import io.euruapp.util.ConstantsUtils.showToast
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.EasyPermissions
 import java.util.*
@@ -74,6 +73,7 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
         apiClient!!.connect()
         toggleLoading(false)
 
+        getPendingAccountForUser(null)
 
     }
 
@@ -205,16 +205,16 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                     if (documents.isEmpty()) {
                         ConstantsUtils.logResult("No documents found for the current user...")
                         ConstantsUtils.logResult("Provider: $isProvider")
+
                         //No user data found, so we query for pending approvals
                         if (isProvider) {
                             debugLog("Getting pending account...")
                             getPendingAccountForUser(firebaseUser)
-                            return@addOnCompleteListener
+                        } else {
+                            debugLog("Creating new account...")
+                            // Create a new account for users who are not service providers
+                            createNewUser(firebaseUser)
                         }
-
-                        debugLog("Creating new account...")
-                        // Create a new account for users who are not service providers
-                        createNewUser(firebaseUser)
                     } else {
                         val snapshot = documents[0]
                         if (snapshot != null && snapshot.exists()) {
@@ -344,23 +344,27 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
         }
     }
 
-    private fun getPendingAccountForUser(firebaseUser: FirebaseUser) {
+    private fun getPendingAccountForUser(firebaseUser: FirebaseUser?) {
         debugLog("Getting pending account...")
-        firestore.collection(ConstantsUtils.COLLECTION_PENDING_REGISTRATION)
-            .whereEqualTo("key", firebaseUser.uid)
-            .get()
-            .addOnCompleteListener(this@AuthActivity) {
-                if (it.isSuccessful) {
-                    if (it.result != null && it.result!!.documents.isNotEmpty()) {
-                        toggleLoading(false)
-                        val user = it.result!!.documents[0].toObject(User::class.java)
-                        debugLog("Pending User: $user")
-                        createPendingUser(user)
-                    } else createNewUser(firebaseUser, true)
-                } else {
-                    showToast(applicationContext, "Cannot find user\'s pending account")
+        if (firebaseUser != null) {
+            firestore.collection(ConstantsUtils.COLLECTION_PENDING_REGISTRATION)
+                .whereEqualTo("key", firebaseUser.uid)
+                .get()
+                .addOnCompleteListener(this@AuthActivity) {
+                    if (it.isSuccessful) {
+                        if (it.result != null && it.result!!.documents.isNotEmpty()) {
+                            toggleLoading(false)
+                            val user = it.result!!.documents[0].toObject(User::class.java)
+                            debugLog("Pending User: $user")
+                            createPendingUser(user)
+                        } else createNewUser(firebaseUser, true)
+                    } else {
+                        showToast(applicationContext, "Cannot find user\'s pending account")
+                    }
                 }
-            }
+        } else {
+            debugLog("Null user found")
+        }
 
     }
 
