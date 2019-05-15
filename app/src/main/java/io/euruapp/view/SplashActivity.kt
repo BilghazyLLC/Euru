@@ -2,11 +2,10 @@ package io.euruapp.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import io.euruapp.R
 import io.euruapp.core.BaseActivity
 import io.euruapp.util.ConstantsUtils
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 /**
  * Splash screen activity
@@ -15,39 +14,15 @@ class SplashActivity(override val layoutId: Int = R.layout.activity_splash) : Ba
 
 
     override fun onViewCreated(intent: Intent, instanceState: Bundle?) {
-        /*Handler().postDelayed({
+        Handler().postDelayed({
             ConstantsUtils.intentToActivity(
                 this@SplashActivity,
-                when {
-                    database.isLoggedIn -> {
-                        if (database.isPending) PendingRegistrationActivity::class.java
-                        else HomeActivity::class.java
-                    }
-
-                    else -> OnboardingActivity::class.java
-                }
+                // todo: check login for provider to know whether or not they have pending registrations
+                if (database.isLoggedIn) HomeActivity::class.java else OnboardingActivity::class.java
             )
 
 
             finish()
-        }, 1000)*/
-
-        ioScope.launch {
-            delay(1000)
-            uiScope.launch {
-                ConstantsUtils.intentToActivity(
-                    this@SplashActivity,
-                    when {
-                        database.isLoggedIn -> {
-                            if (database.isPending) PendingRegistrationActivity::class.java
-                            else HomeActivity::class.java
-                        }
-
-                        else -> OnboardingActivity::class.java
-                    }
-                )
-                finish()
-            }
-        }
+        }, 1000)
     }
 }

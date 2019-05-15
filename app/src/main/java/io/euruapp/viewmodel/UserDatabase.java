@@ -23,11 +23,9 @@ public class UserDatabase {
     private static final String KEY_TYPE = "KEY_TYPE";
     private static final String KEY_LNG = "KEY_LNG";
     private static final String KEY_LAT = "KEY_LAT";
-    private static final String KEY_PENDING = "KEY_PENDING";
     private final SharedPreferences prefs;
     //Login state
     private boolean isLoggedIn = false;
-    private boolean isPending = false;
 
     //Properties
     private String name;
@@ -50,8 +48,6 @@ public class UserDatabase {
         profile = prefs.getString(KEY_USER_PROFILE, null);
         phone = prefs.getString(KEY_PHONE, null);
         type = prefs.getString(KEY_TYPE, null);
-
-        isPending = prefs.getBoolean(KEY_PENDING, false);
 
         //Can store lat and lng but not EuruGeoPoint
         lat = prefs.getFloat(KEY_LAT, 0.0f);
@@ -77,8 +73,6 @@ public class UserDatabase {
 
             //Create new instance of the GeoPoint
             address = new EuruGeoPoint(new GeoPoint(lat, lng));
-
-            isPending = prefs.getBoolean(KEY_PENDING, false);
         }
 
     }
@@ -171,14 +165,5 @@ public class UserDatabase {
     public void updateProfile(String profile) {
         this.profile = profile;
         prefs.edit().putString(KEY_USER_PROFILE, profile).apply();
-    }
-
-    public boolean isPending() {
-        return prefs.getBoolean(KEY_PENDING, false);
-    }
-
-    public void setPending(boolean pending) {
-        isPending = pending;
-        prefs.edit().putBoolean(KEY_PENDING, pending).apply();
     }
 }

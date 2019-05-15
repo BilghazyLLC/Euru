@@ -15,35 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "487543559876-j89t1jt9h8g8bc5d3hcv5aut5fp1g6cm.apps.googleusercontent.com",
+          "client_id": "487543559876-og9q12ttmujd8hvhe8qs478r6bti318h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "io.euruapp",
-            "certificate_hash": "c11d545f2fb712fb89c3b8dfbc05873bb8658d8d"
-          }
-        },
-        {
-          "client_id": "487543559876-r2r4obm2pt1g3h6db538e4hlorejld70.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "io.euruapp",
-            "certificate_hash": "0098cdd131752fb12af8c85450d0fdc973e19769"
-          }
-        },
-        {
-          "client_id": "487543559876-8aa4tvjiusgska770h7cle6bmm2fgdsr.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "io.euruapp",
-            "certificate_hash": "2cdfaac2dcf57181ee091d9741d2de9a5e9337b9"
-          }
-        },
-        {
-          "client_id": "487543559876-90a923l5h9i6mgl8sk6edrs7pfdpv4k9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "io.euruapp",
-            "certificate_hash": "f0cb1e018b5d76cebcd5ce8015b536afa7f3d5dc"
+            "certificate_hash": "6f4dc099bfc66b5626b52ed71004f753ffdfaf94"
           }
         },
         {
@@ -55,11 +31,27 @@
           }
         },
         {
-          "client_id": "487543559876-og9q12ttmujd8hvhe8qs478r6bti318h.apps.googleusercontent.com",
+          "client_id": "487543559876-90a923l5h9i6mgl8sk6edrs7pfdpv4k9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "io.euruapp",
-            "certificate_hash": "6f4dc099bfc66b5626b52ed71004f753ffdfaf94"
+            "certificate_hash": "f0cb1e018b5d76cebcd5ce8015b536afa7f3d5dc"
+          }
+        },
+        {
+          "client_id": "487543559876-8aa4tvjiusgska770h7cle6bmm2fgdsr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.euruapp",
+            "certificate_hash": "2cdfaac2dcf57181ee091d9741d2de9a5e9337b9"
+          }
+        },
+        {
+          "client_id": "487543559876-r2r4obm2pt1g3h6db538e4hlorejld70.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.euruapp",
+            "certificate_hash": "0098cdd131752fb12af8c85450d0fdc973e19769"
           }
         },
         {
@@ -73,7 +65,11 @@
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 1
+        },
         "appinvite_service": {
+          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "487543559876-s1rba688015090n4ubbnjfe706oeddnk.apps.googleusercontent.com",
@@ -87,6 +83,9 @@
               }
             }
           ]
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     }
