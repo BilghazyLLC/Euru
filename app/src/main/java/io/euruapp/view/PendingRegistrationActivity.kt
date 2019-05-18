@@ -21,28 +21,32 @@ class PendingRegistrationActivity(override val layoutId: Int = R.layout.activity
         //Send registration to server
         //todo: fix AUTHENTICATION_FAILED exception
         val user = database.user
-        FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener {
-            if (it.isSuccessful) {
-                //Create hash map
-                val hashMap = HashMap<Any, Any?>(0)
-                hashMap["key"] = it.result?.token
-                hashMap["type"] = user.type
-                hashMap["uid"] = user.key
-                hashMap["name"] = user.name
-                hashMap["timestamp"] = System.currentTimeMillis().toString()
-                hashMap["service"] = null
-                hashMap["address"] = GeoPoint(tracker.latitude, tracker.longitude)
+        auth.signInAnonymously().addOnCompleteListener {task ->
+            if (task.isSuccessful) {
+                FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        //Create hash map
+                        val hashMap = HashMap<Any, Any?>(0)
+                        hashMap["key"] = it.result?.token
+                        hashMap["type"] = user.type
+                        hashMap["uid"] = user.key
+                        hashMap["name"] = user.name
+                        hashMap["timestamp"] = System.currentTimeMillis().toString()
+                        hashMap["service"] = null
+                        hashMap["address"] = GeoPoint(tracker.latitude, tracker.longitude)
 
-                //Push data to database
-                firestore.collection(ConstantsUtils.COLLECTION_TOKENS)
-                    .document(user.key)
-                    .set(hashMap)
-                    .addOnCompleteListener { task1 ->
-                        ConstantsUtils.logResult(it.result?.token)
-                        ConstantsUtils.logResult(if (task1.isSuccessful) "Device Token uploaded" else "Failed to upload device token")
-                    }.addOnFailureListener { e -> ConstantsUtils.logResult(e.localizedMessage) }
-            } else {
-                ConstantsUtils.logResult("ID Token error: ${it.exception?.localizedMessage}")
+                        //Push data to database
+                        firestore.collection(ConstantsUtils.COLLECTION_TOKENS)
+                            .document(user.key)
+                            .set(hashMap)
+                            .addOnCompleteListener { task1 ->
+                                ConstantsUtils.logResult(it.result?.token)
+                                ConstantsUtils.logResult(if (task1.isSuccessful) "Device Token uploaded" else "Failed to upload device token")
+                            }.addOnFailureListener { e -> ConstantsUtils.logResult(e.localizedMessage) }
+                    } else {
+                        ConstantsUtils.logResult("ID Token error: ${it.exception?.localizedMessage}")
+                    }
+                }
             }
         }
 
