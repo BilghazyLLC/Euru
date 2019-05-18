@@ -273,9 +273,10 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                 .addOnCompleteListener(this@AuthActivity) { task1 ->
                     if (task1.isSuccessful) {
                         toggleLoading(false)
-                        //todo: add prefs here
+                        database.user = user
+                        database.isPending = true
                         intentTo(this, PendingRegistrationActivity::class.java)
-
+                        finishAfterTransition()
                     } else {
                         toggleLoading(false)
                         ConstantsUtils.logResult("User data cannot be set")
@@ -342,7 +343,7 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                             User.TYPE_BUSINESS,
                             firebaseUser.photoUrl.toString(),
                             firebaseUser.phoneNumber,
-                            EuruGeoPoint(GeoPoint(5.6545985,-0.1840723))
+                            EuruGeoPoint(GeoPoint(5.6545985, -0.1840723))
                         )
                         database.isPending = true
                         intentTo(this, PendingRegistrationActivity::class.java)

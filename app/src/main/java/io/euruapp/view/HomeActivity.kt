@@ -84,15 +84,14 @@ class HomeActivity(override val layoutId: Int = R.layout.activity_home) : BaseAc
 
     private fun sendRegistration() {
         //Send registration to server
-        val user = UserDatabase(this).user
+        val user = database.user
         if (user != null /*&& user.getType() == User.TYPE_BUSINESS*/) {
 
-            val fb = FirebaseFirestore.getInstance()
             val s = FirebaseInstanceId.getInstance().token
 
             //Get the business model of the current service provider
             if (user.type == User.TYPE_BUSINESS) {
-                fb.collection(ConstantsUtils.COLLECTION_BUSINESS)
+                firestore.collection(ConstantsUtils.COLLECTION_BUSINESS)
                     .whereEqualTo("userUID", user.key)
                     .limit(1)
                     .get()
@@ -116,7 +115,7 @@ class HomeActivity(override val layoutId: Int = R.layout.activity_home) : BaseAc
                                 hashMap["address"] = GeoPoint(tracker.latitude, tracker.longitude)
 
                                 //Push data to database
-                                FirebaseFirestore.getInstance().collection(ConstantsUtils.COLLECTION_TOKENS)
+                                firestore.collection(ConstantsUtils.COLLECTION_TOKENS)
                                     .document(user.key)
                                     .set(hashMap)
                                     .addOnCompleteListener { task1 ->
@@ -131,7 +130,7 @@ class HomeActivity(override val layoutId: Int = R.layout.activity_home) : BaseAc
             } else {
 
                 //Get the users with said key
-                fb.collection(ConstantsUtils.COLLECTION_USERS)
+                firestore.collection(ConstantsUtils.COLLECTION_USERS)
                     .whereEqualTo("key", user.key)
                     .limit(1)
                     .get()
