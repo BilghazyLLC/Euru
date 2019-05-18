@@ -274,7 +274,7 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                     if (task1.isSuccessful) {
                         toggleLoading(false)
                         //todo: add prefs here
-                        intentTo(this,PendingRegistrationActivity::class.java)
+                        intentTo(this, PendingRegistrationActivity::class.java)
 
                     } else {
                         toggleLoading(false)
@@ -336,13 +336,9 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                 if (it.isSuccessful) {
                     if (it.result != null && it.result!!.documents.isNotEmpty()) {
                         toggleLoading(false)
-                       /* ConstantsUtils.showToast(
-                            this@AuthActivity,
-                            String.format(
-                                "You already have pending registration. Please wait until you have been approved for this platform. Thank you, %s",
-                                firebaseUser.displayName ?: firebaseUser.email ?: firebaseUser.phoneNumber
-                            )
-                        )*/
+                        database.isPending = true
+                        intentTo(this, PendingRegistrationActivity::class.java)
+                        finishAfterTransition()
                     } else createNewUser(firebaseUser, true)
                 }
             }
