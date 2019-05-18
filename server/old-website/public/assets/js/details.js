@@ -22,5 +22,32 @@ const bindUI = (userData) => {
     $('#user-name').text(userData.name);
     $('#user-email').text(userData.phone);
 
-    
+    // Load business information
+    db.collection('euru_business')
+        .where('userUID', '==', userData.key)
+        .get().then(querySnapshot => {
+            if (querySnapshot) {
+                console.log(querySnapshot.docs[0]);
+                
+                var snapshot = querySnapshot.docs[0];
+                if (snapshot && snapshot.exists) {
+                    console.log(snapshot.data());
+
+                    var business = snapshot.data();
+
+                    // Setup Business information
+                    $('#business-name').val(business.name);
+                    $('#business-category').val(business.category);
+                    $('#business-phone').val(business.phone);
+                    $('#business-desc').val(business.desc);
+                    $('#business-image').attr('src', business.image ? business.image : './assets/img/bg5.jpg').css({'width': '100%', 'height': '370px'});
+
+                    //navigator.geolocation.getCurrentPosition()
+
+                } else {
+                    alert('This service provider has no regsitered business yet');
+                }
+            }
+        })
+
 };
