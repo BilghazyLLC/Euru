@@ -336,13 +336,20 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
                 if (it.isSuccessful) {
                     if (it.result != null && it.result!!.documents.isNotEmpty()) {
                         toggleLoading(false)
+                        database.user = User(
+                            firebaseUser.displayName,
+                            firebaseUser.uid,
+                            User.TYPE_BUSINESS,
+                            firebaseUser.photoUrl.toString(),
+                            firebaseUser.phoneNumber,
+                            EuruGeoPoint(GeoPoint(5.6545985,-0.1840723))
+                        )
                         database.isPending = true
                         intentTo(this, PendingRegistrationActivity::class.java)
                         finishAfterTransition()
                     } else createNewUser(firebaseUser, true)
                 }
             }
-
     }
 
     override fun onConnectionFailed(connectionResult: ConnectionResult) {

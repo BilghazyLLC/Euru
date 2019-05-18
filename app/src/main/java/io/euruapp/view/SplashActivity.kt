@@ -17,8 +17,11 @@ class SplashActivity(override val layoutId: Int = R.layout.activity_splash) : Ba
         Handler().postDelayed({
             ConstantsUtils.intentToActivity(
                 this@SplashActivity,
-                // todo: check login for provider to know whether or not they have pending registrations
-                if (database.isLoggedIn) HomeActivity::class.java else OnboardingActivity::class.java
+                if (database.isLoggedIn) {
+                    if (database.isPending) PendingRegistrationActivity::class.java else HomeActivity::class.java
+                } else {
+                    OnboardingActivity::class.java
+                }
             )
 
 
