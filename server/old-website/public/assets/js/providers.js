@@ -4,10 +4,12 @@ $(document).ready(() => {
     var loading = $('#loading');
 
     table.hide();
-    db.collection('euru_pending_approvals').get()
+    db.collection('euru_pending_approvals')
+        .orderBy('timestamp', 'desc')
+        .get()
         .then((snapshot) => {
             console.log(snapshot);
-            
+
             if (snapshot && !snapshot.empty) {
                 snapshot.forEach(doc => {
                     console.log(doc.data());
@@ -18,8 +20,7 @@ $(document).ready(() => {
 
                     tableContent.append(`
                         <tr>
-                            <td>
-                                
+                            <td> 
                                 ${user.name}
                             </td>
                             <td>
@@ -32,7 +33,7 @@ $(document).ready(() => {
                                 ${user.type === 'TYPE_CUSTOMER' ? 'Customer' : 'Service Provider'}
                             </td>
                             <td class="text-center">
-                                <a href="#user" class="btn btn-info" onclick"moveToParticulars()">View Particulars</a>
+                                <a href="#user" class="btn btn-info" data-href="${user.key}">View Particulars</a>
                             </td>
                         </tr>
                         `);
@@ -46,10 +47,14 @@ $(document).ready(() => {
             console.log(err.message);
         });
 
-        moveToParticulars(){
-            Dashboard = "particulars";
+        // Click listener
+        $(document).on('click','a[data-href]', function(ev) {
+            ev.preventDefault();
 
+            // Get the provider's key
+            window.localStorage.setItem('provider-key', this.dataset.href);
 
-
-        }
+            // Navigate to the providers details
+            window.location.href = 'details.html';
+        });
 })
