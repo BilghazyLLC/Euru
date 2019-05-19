@@ -32,4 +32,5 @@
         this process is complete (NB: Approval may take up to 48 hours so please be patient). Thank you for your
         participation
     </string>
+    <string name="awaiting_approval">Awaiting Approval</string>
 </resources>
