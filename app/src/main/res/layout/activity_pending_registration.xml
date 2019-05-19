@@ -174,7 +174,7 @@
                             android:layout_gravity="start"
                             android:text="Short Description:"
                             android:textColor="?attr/colorAccent"
-                            android:textSize="18dp"
+                            android:textSize="18sp"
                             app:fontFamily="@font/lato" />
 
                     <io.codelabs.widget.BaselineGridTextView
@@ -241,7 +241,7 @@
                                                                        android:textColor="@color/white"
                                                                        android:text="Cancel Registration"
                                                                        android:layout_height="wrap_content"/>
-
+                    
 
                 </LinearLayout>
 
