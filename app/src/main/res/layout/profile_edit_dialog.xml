@@ -40,7 +40,7 @@
 
         <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent"
                                                                  android:layout_height="wrap_content"
-                                                                 android:inputType="textCapSentences|textAutoCorrect|textAutoComplete"
+                                                                 android:inputType="textCapSentences|textAutoCorrect|textAutoComplete|textMultiLine"
                                                                  android:id="@+id/profile_about"/>
     </com.google.android.material.textfield.TextInputLayout>
 
