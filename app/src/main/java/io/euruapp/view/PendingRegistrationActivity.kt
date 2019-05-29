@@ -2,10 +2,10 @@ package io.euruapp.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.iid.FirebaseInstanceId
-import io.codelabs.sdk.util.debugLog
 import io.euruapp.R
 import io.euruapp.core.BaseActivity
 import io.euruapp.databinding.ActivityPendingRegistrationBinding
@@ -19,9 +19,13 @@ class PendingRegistrationActivity(override val layoutId: Int = R.layout.activity
 
     override fun onViewCreated(intent: Intent, instanceState: Bundle?) {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_pending_registration)
-        debugLog(database.user)
+
+        // Send user device registration token to the server
         sendRegistration()
+
+        // Bind user's data to UI
         binding.user = database.user
+//        binding.business = Business("", "", "Zeniteck IT Solutions LLC", "+233550022344", "Laptop Repairs", "Beyond IT", "", mutableListOf())
     }
 
     private fun sendRegistration() {
@@ -57,5 +61,13 @@ class PendingRegistrationActivity(override val layoutId: Int = R.layout.activity
             }
         }
     }
+
+    fun cancelRegistration(view: View) {
+        
+    }
+
+    fun editUser(view: View) {}
+
+    fun registerBusiness(view: View) {}
 
 }

@@ -170,6 +170,7 @@ public class User extends DataModel implements Parcelable {
                 .placeholder(R.drawable.avatar_placeholder)
                 .error(R.drawable.avatar_placeholder)
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .circleCrop()
                 .into(imageView);
     }
 
