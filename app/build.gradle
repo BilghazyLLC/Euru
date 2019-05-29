@@ -124,6 +124,8 @@ dependencies {
     kapt "androidx.lifecycle:lifecycle-common-java8:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
 
+    implementation 'com.afollestad.material-dialogs:input:3.0.0-beta2'
+
     // Koin
     implementation "org.koin:koin-android:$koin"
     implementation "org.koin:koin-androidx-scope:$koin"
