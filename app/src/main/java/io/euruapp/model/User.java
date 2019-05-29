@@ -163,9 +163,8 @@ public class User extends DataModel implements Parcelable {
         this.address = address;
     }
 
-
     @BindingAdapter({"imageUrl"})
-    public void loadAvatar(ImageView imageView, String imageUrl) {
+    public static void loadAvatar(ImageView imageView, String imageUrl) {
         GlideApp.with(imageView.getContext())
                 .load(imageUrl)
                 .placeholder(R.drawable.avatar_placeholder)

@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable name="user" type="io.euruapp.model.User"/>
+        <variable name="business" type="io.euruapp.model.Business"/>
     </data>
     <FrameLayout android:layout_width="match_parent"
-                     android:layout_height="wrap_content">
+                 android:layout_height="wrap_content">
 
         <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
                                                android:layout_height="wrap_content">
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                     xmlns:tools="http://schemas.android.com/tools"
@@ -39,6 +39,7 @@
                                                       app:layout_constraintStart_toStartOf="parent"
                                                       app:layout_constraintEnd_toEndOf="parent"
                                                       tools:src="@drawable/avatar_placeholder"
+                                                      app:imageUrl="@{user.profile}"
                                                       android:elevation="@dimen/z_avatar"
                                                       android:layout_marginTop="@dimen/spacing_normal"/>
 
@@ -76,7 +77,6 @@
                                   android:id="@+id/userEmail"
                                   android:text="@{user.phone, default=`@string/dummy_phone`}"
                                   android:layout_centerHorizontal="true"
-                                  tools:text="@string/dummy_email"
                                   android:layout_below="@id/userName"
                                   style="@style/TextAppearance.DribbbleShotDescription"
                                   android:layout_height="wrap_content"
@@ -98,6 +98,7 @@
                                                                    android:layout_marginEnd="@dimen/spacing_normal"
                                                                    android:layout_marginTop="10dp"
                                                                    android:padding="15dp"
+                                                                   android:visibility="visible"
                                                                    android:id="@+id/businessParticulars"
                                                                    app:cardCornerRadius="@dimen/spacing_normal"
                                                                    app:cardBackgroundColor="@color/grey_300"
@@ -118,12 +119,11 @@
                                 android:textSize="20sp"
                                 app:fontFamily="@font/lato"/>
 
-
                         <io.codelabs.widget.BaselineGridTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="Business Name:"
+                                android:text="@{String.format(`Business Name: %s`, business.name), default=`Business Name: Strong Business`}"
                                 android:textColor="?attr/colorAccent"
                                 android:textSize="18sp"
                                 app:fontFamily="@font/lato"/>

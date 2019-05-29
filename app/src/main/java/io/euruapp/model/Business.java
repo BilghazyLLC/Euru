@@ -18,6 +18,7 @@ public class Business extends DataModel implements Parcelable {
             return new Business[size];
         }
     };
+
     public String userUID;
     public String key;
     public String name;
