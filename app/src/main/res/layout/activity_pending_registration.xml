@@ -45,6 +45,7 @@
                                                     android:layout_height="@dimen/avatar_bounds"
                                                     android:src="@drawable/avatar_placeholder"
                                                     app:imageUrl="@{user.profile}"
+                                                    android:onClick="updateAvatar"
                                                     app:layout_constraintTop_toTopOf="parent"
                                                     app:layout_constraintStart_toStartOf="parent"
                                                     android:id="@+id/avatar"/>

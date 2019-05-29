@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.customview.customView
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.iid.FirebaseInstanceId
 import io.euruapp.R
@@ -63,11 +66,45 @@ class PendingRegistrationActivity(override val layoutId: Int = R.layout.activity
     }
 
     fun cancelRegistration(view: View) {
-        
+        MaterialDialog(this).show {
+            title(res = R.string.cancel_registration)
+            message(text = "Do you wish to cancel your ${getString(R.string.app_name)} registration?")
+            positiveButton(text = "Ok") {
+                it.dismiss()
+
+                //todo: cancel provider's approval request
+            }
+            negativeButton(text = "Dismiss") { it.dismiss() }
+        }
     }
 
-    fun editUser(view: View) {}
+    fun editUser(view: View) {
+        val profileView = layoutInflater.inflate(R.layout.profile_edit_dialog, null, false)
+        val usernameUser = profileView.findViewById<TextInputEditText>(R.id.profile_username).apply {
+            setText(binding.user?.name)
+        }
+
+        val phoneUser = profileView.findViewById<TextInputEditText>(R.id.profile_phone).apply {
+            setText(binding.user?.phone)
+        }
+
+        val aboutUser = profileView.findViewById<TextInputEditText>(R.id.profile_about)
+
+        MaterialDialog(this).show {
+            title(text = "Update profile information")
+            customView(view = profileView, dialogWrapContent = true)
+            positiveButton(text = "Save") {
+                it.dismiss()
+
+                // todo: save user's profile information
+            }
+            negativeButton(text = "Dismiss") { it.dismiss() }
+            cancelOnTouchOutside(false)
+        }
+    }
 
     fun registerBusiness(view: View) {}
+
+    fun updateAvatar(view: View) {}
 
 }

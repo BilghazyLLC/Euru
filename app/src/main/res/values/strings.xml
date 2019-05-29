@@ -34,4 +34,5 @@
     </string>
     <string name="awaiting_approval">Awaiting Approval</string>
     <string name="cancel_registration">Cancel Registration</string>
+    <string name="about">About Me</string>
 </resources>
