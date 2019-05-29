@@ -41,6 +41,9 @@ android {
         abortOnError false
         ignoreWarnings true
     }
+    dataBinding {
+        enabled = true
+    }
 
 }
 
@@ -118,7 +121,7 @@ dependencies {
 
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle"
+    kapt "androidx.lifecycle:lifecycle-common-java8:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
 
     // Koin

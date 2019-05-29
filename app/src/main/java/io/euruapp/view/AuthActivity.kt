@@ -121,7 +121,6 @@ class AuthActivity(override val layoutId: Int = R.layout.activity_auth) : BaseAc
         isProvider = false
     }
 
-    //Login using Google Account
     fun loginAsProvider(view: View) {
         toggleLoading(true)
         //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,

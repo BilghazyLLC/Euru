@@ -1,268 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="user" type="io.euruapp.model.User"/>
+    </data>
+    <FrameLayout android:layout_width="match_parent"
+                     android:layout_height="wrap_content">
 
-<FrameLayout android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
-                                           android:layout_height="wrap_content"
-                                           xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:padding="10dp"
-                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-                tools:context=".view.PendingRegistrationActivity">
+        <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content">
 
 
-
-            <TextView android:layout_width="match_parent"
-                      app:layout_constraintTop_toTopOf="parent"
-                      android:text="@string/awaiting_approval"
-                      android:gravity="center"
-                      android:textStyle="bold"
-                      android:textColor="?attr/colorAccent"
-                      android:textSize="22sp"
-                      android:id="@+id/tvAwaiting"
-                      android:fontFamily="@font/lato"
-                      android:layout_marginTop="50dp"
-                      app:layout_constraintEnd_toEndOf="parent"
-                      app:layout_constraintEnd_toStartOf="parent"
-                      android:layout_height="wrap_content"/>
-
-            <io.codelabs.widget.CircularImageView android:layout_width="@dimen/large_avatar_size"
-                                                  android:layout_height="@dimen/large_avatar_size"
-                                                  android:id="@+id/circularImageView"
-
-                                                  app:layout_constraintTop_toBottomOf="@id/tvAwaiting"
-                                                  app:layout_constraintStart_toStartOf="parent"
-                                                  app:layout_constraintEnd_toEndOf="parent"
-                                                  tools:src="@drawable/placeholderuser"
-                                                  android:elevation="@dimen/z_avatar"
-                                                  android:layout_marginTop="@dimen/spacing_normal"/>
-
-            <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
-                                                               android:layout_height="wrap_content"
-                                                               app:layout_constraintTop_toTopOf="@id/circularImageView"
-                                                               app:layout_constraintStart_toStartOf="parent"
-                                                               app:layout_constraintEnd_toEndOf="parent"
-                                                               android:layout_marginStart="@dimen/spacing_normal"
-                                                               android:layout_marginEnd="@dimen/spacing_normal"
-                                                               android:layout_marginTop="60dp"
-                                                               android:id="@+id/businessInfo"
-                                                               app:cardCornerRadius="@dimen/spacing_normal"
-                                                               app:cardBackgroundColor="@color/grey_200"
-                                                               app:cardElevation="@dimen/z_card">
-
-                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                                android:padding="@dimen/padding_dialog"
-                                android:layout_marginTop="@dimen/spacing_xlarge"
-                                android:orientation="vertical">
-
-                    <TextView android:layout_width="wrap_content"
-                              android:id="@+id/userName"
-                              android:layout_alignParentTop="true"
-                              android:layout_centerHorizontal="true"
-                              android:padding="@dimen/spacing_micro"
-                              android:text="Benjamin Avi"
-                              style="@style/TextAppearance.DribbbleShotTitle"
-                              android:layout_height="wrap_content"
-                              android:fontFamily="@font/lato"/>
-
-                    <TextView android:layout_width="wrap_content"
-                              android:gravity="center"
-                              android:id="@+id/userEmail"
-                              android:text="benjirro1@gmail.com"
-                              android:layout_centerHorizontal="true"
-                              tools:text="@string/dummy_email"
-                              android:layout_below="@id/userName"
-                              style="@style/TextAppearance.DribbbleShotDescription"
-                              android:layout_height="wrap_content"
-                              android:fontFamily="@font/lato"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="match_parent"
+                    tools:context=".view.PendingRegistrationActivity">
 
 
+                <TextView android:layout_width="match_parent"
+                          app:layout_constraintTop_toTopOf="parent"
+                          android:text="@string/awaiting_approval"
+                          android:gravity="center"
+                          android:textStyle="bold"
+                          android:textColor="?attr/colorAccent"
+                          android:textSize="22sp"
+                          android:id="@+id/tvAwaiting"
+                          android:fontFamily="@font/lato"
+                          android:layout_marginTop="50dp"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintEnd_toStartOf="parent"
+                          android:layout_height="wrap_content"/>
+
+                <io.codelabs.widget.CircularImageView android:layout_width="@dimen/large_avatar_size"
+                                                      android:layout_height="@dimen/large_avatar_size"
+                                                      android:id="@+id/circularImageView"
+                                                      app:layout_constraintTop_toBottomOf="@id/tvAwaiting"
+                                                      app:layout_constraintStart_toStartOf="parent"
+                                                      app:layout_constraintEnd_toEndOf="parent"
+                                                      tools:src="@drawable/avatar_placeholder"
+                                                      android:elevation="@dimen/z_avatar"
+                                                      android:layout_marginTop="@dimen/spacing_normal"/>
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                                                                   android:layout_height="wrap_content"
+                                                                   app:layout_constraintTop_toTopOf="@id/circularImageView"
+                                                                   app:layout_constraintStart_toStartOf="parent"
+                                                                   app:layout_constraintEnd_toEndOf="parent"
+                                                                   android:layout_marginStart="@dimen/spacing_normal"
+                                                                   android:layout_marginEnd="@dimen/spacing_normal"
+                                                                   android:layout_marginTop="60dp"
+                                                                   android:id="@+id/businessInfo"
+                                                                   app:cardCornerRadius="@dimen/spacing_normal"
+                                                                   app:cardBackgroundColor="@color/grey_200"
+                                                                   app:cardElevation="@dimen/z_card">
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                    android:padding="@dimen/padding_dialog"
+                                    android:layout_marginTop="@dimen/spacing_xlarge"
+                                    android:orientation="vertical">
+
+                        <TextView android:layout_width="wrap_content"
+                                  android:id="@+id/userName"
+                                  android:layout_alignParentTop="true"
+                                  android:layout_centerHorizontal="true"
+                                  android:padding="@dimen/spacing_micro"
+                                  tools:text="Benjamin Avi"
+                                  android:text="@{user.name, default=`Benjamin Avimenou`}"
+                                  style="@style/TextAppearance.DribbbleShotTitle"
+                                  android:layout_height="wrap_content"
+                                  android:fontFamily="@font/lato"/>
+
+                        <TextView android:layout_width="wrap_content"
+                                  android:gravity="center"
+                                  android:id="@+id/userEmail"
+                                  android:text="@{user.phone, default=`@string/dummy_phone`}"
+                                  android:layout_centerHorizontal="true"
+                                  tools:text="@string/dummy_email"
+                                  android:layout_below="@id/userName"
+                                  style="@style/TextAppearance.DribbbleShotDescription"
+                                  android:layout_height="wrap_content"
+                                  android:fontFamily="@font/lato"/>
 
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
 
+                </com.google.android.material.card.MaterialCardView>
 
 
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                                                                   android:layout_height="wrap_content"
+                                                                   app:layout_constraintTop_toBottomOf="@id/businessInfo"
+                                                                   app:layout_constraintStart_toStartOf="parent"
+                                                                   app:layout_constraintEnd_toEndOf="parent"
+                                                                   android:layout_marginStart="@dimen/spacing_normal"
+                                                                   android:layout_marginEnd="@dimen/spacing_normal"
+                                                                   android:layout_marginTop="10dp"
+                                                                   android:padding="15dp"
+                                                                   android:id="@+id/businessParticulars"
+                                                                   app:cardCornerRadius="@dimen/spacing_normal"
+                                                                   app:cardBackgroundColor="@color/grey_300"
+                                                                   app:cardElevation="@dimen/z_card">
 
-            </com.google.android.material.card.MaterialCardView>
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="vertical"
+                                  android:padding="@dimen/spacing_normal"
+                                  android:layout_height="wrap_content">
 
-
-            <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
-                                                               android:layout_height="wrap_content"
-                                                               app:layout_constraintTop_toBottomOf="@id/businessInfo"
-                                                               app:layout_constraintStart_toStartOf="parent"
-                                                               app:layout_constraintEnd_toEndOf="parent"
-                                                               android:layout_marginStart="@dimen/spacing_normal"
-                                                               android:layout_marginEnd="@dimen/spacing_normal"
-                                                               android:layout_marginTop="10dp"
-                                                               android:padding="15dp"
-                                                               android:id="@+id/businessParticulars"
-                                                               app:cardCornerRadius="@dimen/spacing_normal"
-                                                               app:cardBackgroundColor="@color/grey_300"
-                                                               app:cardElevation="@dimen/z_card">
-
-                <LinearLayout android:layout_width="match_parent"
-                              android:orientation="vertical"
-                              android:padding="@dimen/spacing_normal"
-                              android:layout_height="wrap_content">
-
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Particulars "
-                            android:layout_margin="10dp"
-                            android:textStyle="bold"
-                            android:textSize="20sp"
-                            app:fontFamily="@font/lato" />
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Particulars "
+                                android:layout_margin="10dp"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                app:fontFamily="@font/lato"/>
 
 
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:text="Business Name:"
-                            android:textColor="?attr/colorAccent"
-                            android:textSize="18sp"
-                            app:fontFamily="@font/lato" />
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="Business Name:"
+                                android:textColor="?attr/colorAccent"
+                                android:textSize="18sp"
+                                app:fontFamily="@font/lato"/>
 
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:id="@+id/tvBusinessName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:layout_marginBottom="@dimen/padding_normal"
-                            android:textColor="@color/text_secondary_dark"
-                            android:textSize="16sp"
-                            app:fontFamily="@font/lato"
-                            tools:text="+233 574753363" />
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:id="@+id/tvBusinessName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/padding_normal"
+                                android:textColor="@color/text_secondary_dark"
+                                android:textSize="16sp"
+                                app:fontFamily="@font/lato"
+                                tools:text="+233 574753363"/>
 
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:layout_marginTop="@dimen/spacing_normal"
-                            android:text="Category:"
-                            android:textColor="?attr/colorAccent"
-                            android:textSize="18sp"
-                            app:fontFamily="@font/lato" />
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginTop="@dimen/spacing_normal"
+                                android:text="Category:"
+                                android:textColor="?attr/colorAccent"
+                                android:textSize="18sp"
+                                app:fontFamily="@font/lato"/>
 
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:id="@+id/business_category"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:layout_marginBottom="@dimen/padding_dialog"
-                            android:textColor="@color/text_secondary_dark"
-                            android:textSize="16sp"
-                            app:fontFamily="@font/lato"
-                            tools:text="Local Trader" />
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:id="@+id/business_category"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/padding_dialog"
+                                android:textColor="@color/text_secondary_dark"
+                                android:textSize="16sp"
+                                app:fontFamily="@font/lato"
+                                tools:text="Local Trader"/>
 
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:text="Short Description:"
-                            android:textColor="?attr/colorAccent"
-                            android:textSize="18sp"
-                            app:fontFamily="@font/lato" />
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="Short Description:"
+                                android:textColor="?attr/colorAccent"
+                                android:textSize="18sp"
+                                app:fontFamily="@font/lato"/>
 
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:id="@+id/business_desc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:layout_marginBottom="@dimen/padding_normal"
-                            android:textColor="@color/text_secondary_dark"
-                            android:textSize="16sp"
-                            app:fontFamily="@font/lato"
-                            tools:text="@string/dummy_about" />
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:text="Business Phone:"
-                            android:textColor="?attr/colorAccent"
-                            android:textSize="18sp"
-                            app:fontFamily="@font/lato" />
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:id="@+id/business_desc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/padding_normal"
+                                android:textColor="@color/text_secondary_dark"
+                                android:textSize="16sp"
+                                app:fontFamily="@font/lato"
+                                tools:text="@string/dummy_about"/>
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="Business Phone:"
+                                android:textColor="?attr/colorAccent"
+                                android:textSize="18sp"
+                                app:fontFamily="@font/lato"/>
 
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:id="@+id/tvPhoneNumber"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:layout_marginBottom="@dimen/padding_normal"
-                            android:textColor="@color/text_secondary_dark"
-                            android:textSize="16sp"
-                            app:fontFamily="@font/lato"
-                            tools:text="+233 574753363" />
-
-
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:id="@+id/tvPhoneNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/padding_normal"
+                                android:textColor="@color/text_secondary_dark"
+                                android:textSize="16sp"
+                                app:fontFamily="@font/lato"
+                                tools:text="+233 574753363"/>
 
 
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:text="Business Location:"
-                            android:textColor="?attr/colorAccent"
-                            android:textSize="18sp"
-                            app:fontFamily="@font/lato" />
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="Business Location:"
+                                android:textColor="?attr/colorAccent"
+                                android:textSize="18sp"
+                                app:fontFamily="@font/lato"/>
 
-                    <io.codelabs.widget.BaselineGridTextView
-                            android:id="@+id/tvLocation"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:layout_marginBottom="@dimen/padding_normal"
-                            android:textColor="@color/text_secondary_dark"
-                            android:textSize="16sp"
-                            app:fontFamily="@font/lato"
-                            tools:text="+233 574753363" />
-
-
-                    <com.google.android.material.button.MaterialButton android:layout_width="wrap_content"
-                                                                       android:layout_gravity="center"
-                                                                       android:id="@+id/btnCancelReg"
-                                                                       android:textAllCaps="false"
-                                                                       android:padding="@dimen/spacing_normal"
-                                                                       android:background="@color/green"
-                                                                       android:textStyle="bold"
-                                                                       android:textColor="@color/white"
-                                                                       android:text="Cancel Registration"
-                                                                       android:layout_height="wrap_content"/>
-                    
-
-                </LinearLayout>
+                        <io.codelabs.widget.BaselineGridTextView
+                                android:id="@+id/tvLocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/padding_normal"
+                                android:textColor="@color/text_secondary_dark"
+                                android:textSize="16sp"
+                                app:fontFamily="@font/lato"
+                                tools:text="+233 574753363"/>
 
 
-            </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.button.MaterialButton android:layout_width="wrap_content"
+                                                                           android:layout_gravity="center"
+                                                                           android:id="@+id/btnCancelReg"
+                                                                           android:textAllCaps="false"
+                                                                           android:padding="@dimen/spacing_normal"
+                                                                           android:background="@color/green"
+                                                                           android:textStyle="bold"
+                                                                           android:textColor="@color/white"
+                                                                           android:text="Cancel Registration"
+                                                                           android:layout_height="wrap_content"/>
 
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.core.widget.NestedScrollView>
+                    </LinearLayout>
 
 
-<com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_width="wrap_content"
-                                                                       android:layout_gravity="bottom|end"
-                                                                       android:src="@drawable/edt_fab_24dp"
-                                                                       android:background="@color/green"
-                                                                       app:fabSize="mini"
-                                                                       android:layout_margin="@dimen/fab_margin"
-                                                                       android:layout_height="wrap_content"/>
-</FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_width="wrap_content"
+                                                                               android:layout_gravity="bottom|end"
+                                                                               android:src="@drawable/edt_fab_24dp"
+                                                                               android:background="@color/green"
+                                                                               app:fabSize="mini"
+                                                                               android:layout_margin="@dimen/fab_margin"
+                                                                               android:layout_height="wrap_content"/>
+    </FrameLayout>
+</layout>
 
 
 

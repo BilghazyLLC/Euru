@@ -2,11 +2,16 @@ package io.euruapp.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
+import androidx.databinding.BindingAdapter;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import io.codelabs.sdk.glide.GlideApp;
+import io.euruapp.R;
 import io.euruapp.room.Converter;
 
 import java.util.Date;
@@ -156,6 +161,17 @@ public class User extends DataModel implements Parcelable {
 
     public void setAddress(EuruGeoPoint address) {
         this.address = address;
+    }
+
+
+    @BindingAdapter({"imageUrl"})
+    public void loadAvatar(ImageView imageView, String imageUrl) {
+        GlideApp.with(imageView.getContext())
+                .load(imageUrl)
+                .placeholder(R.drawable.avatar_placeholder)
+                .error(R.drawable.avatar_placeholder)
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .into(imageView);
     }
 
 }

@@ -2,26 +2,33 @@ package io.euruapp.view
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.iid.FirebaseInstanceId
+import io.codelabs.sdk.util.debugLog
 import io.euruapp.R
 import io.euruapp.core.BaseActivity
+import io.euruapp.databinding.ActivityPendingRegistrationBinding
 import io.euruapp.util.ConstantsUtils
 import java.util.*
 
 class PendingRegistrationActivity(override val layoutId: Int = R.layout.activity_pending_registration) :
     BaseActivity() {
 
-    override fun onViewCreated(intent: Intent, instanceState: Bundle?) {
-        sendRegistration()
-    }
+    private lateinit var binding: ActivityPendingRegistrationBinding
 
+    override fun onViewCreated(intent: Intent, instanceState: Bundle?) {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_pending_registration)
+        debugLog(database.user)
+        sendRegistration()
+        binding.user = database.user
+    }
 
     private fun sendRegistration() {
         //Send registration to server
         //todo: fix AUTHENTICATION_FAILED exception
         val user = database.user
-        auth.signInAnonymously().addOnCompleteListener {task ->
+        auth.signInAnonymously().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener {
                     if (it.isSuccessful) {
@@ -49,6 +56,6 @@ class PendingRegistrationActivity(override val layoutId: Int = R.layout.activity
                 }
             }
         }
-
     }
+
 }
