@@ -32,10 +32,7 @@ object ConstantsUtils {
     @ServiceCategory
     val categories = mutableListOf<Category>(
 
-        Category(
-            Category.SEPTIC_WASTE,
-            "https://firebasestorage.googleapis.com/v0/b/bilghazyllc.appspot.com/o/service_uploads%2FWhatsApp%20Image%202018-11-05%20at%2012.14.50%20AM.jpeg?alt=media&token=f89a23e2-f17a-44f5-86a6-12274512f95b"
-        ),
+
         Category(
             Category.AUTO_SERVICE,
             "https://firebasestorage.googleapis.com/v0/b/bilghazyllc.appspot.com/o/auto.png?alt=media&token=44e4d5f3-17ab-4e67-9c2a-ea74c263c4be" ),
@@ -128,7 +125,13 @@ object ConstantsUtils {
         Category(
             Category.TEACHER,
             "https://firebasestorage.googleapis.com/v0/b/bilghazyllc.appspot.com/o/euru_latest_uploads%2Fteacher.jpg?alt=media&token=e19e63e4-6a1b-4dc4-9fa6-b093f3f2ac70"
-        )
+        ),
+
+
+                Category(
+                Category.SEPTIC_WASTE,
+        "https://firebasestorage.googleapis.com/v0/b/bilghazyllc.appspot.com/o/service_uploads%2FWhatsApp%20Image%202018-11-05%20at%2012.14.50%20AM.jpeg?alt=media&token=f89a23e2-f17a-44f5-86a6-12274512f95b"
+    )
 
 
     )
