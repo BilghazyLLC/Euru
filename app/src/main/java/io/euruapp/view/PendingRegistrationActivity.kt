@@ -120,7 +120,24 @@ class PendingRegistrationActivity(override val layoutId: Int = R.layout.activity
             positiveButton(text = "Save") {
                 it.dismiss()
 
-                // todo: save user's profile information
+                val snackbar = Snackbar.make(binding.container, "Please wait", Snackbar.LENGTH_LONG)
+                snackbar.show()
+
+                firestore.collection(ConstantsUtils.COLLECTION_PENDING_REGISTRATION).document(database.user.key)
+                    .update(
+                        mapOf<String, Any?>(
+                            "phone" to phoneUser.text.toString(),
+                            "name" to usernameUser.text.toString(),
+                            "aboutMe" to aboutUser.text.toString()
+                        )
+                    ).addOnCompleteListener {
+                        database.user?.apply {
+                            phone = phoneUser.text.toString()
+                            name = usernameUser.text.toString()
+                            database.user = this
+                        }
+                    }.addOnFailureListener { }
+
             }
             negativeButton(text = "Dismiss") { it.dismiss() }
             cancelOnTouchOutside(false)
