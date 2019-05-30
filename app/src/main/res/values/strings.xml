@@ -35,4 +35,8 @@
     <string name="awaiting_approval">Awaiting Approval</string>
     <string name="cancel_registration">Cancel Registration</string>
     <string name="about">About Me</string>
+    <string name="business_registration_tutorial">We are glad you have come this far. In order to receive permission to
+        start using our platform, we need you to register at least one business. Just tap on the \"<b>Register Business</b>\"
+        button to get started.
+    </string>
 </resources>
