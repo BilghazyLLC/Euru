@@ -42,7 +42,7 @@ public class Category implements Parcelable {
 	};
 	
 	//CATEGORIES
-	public static final String SEPTIC_WASTE = "Septic_waste";
+	public static final String SEPTIC_WASTE = "Septic Waste";
 	public static final String AUTO_SERVICE = "Auto Service";
 	public static final String BEAUTY = "Beauty & fashion";
 	public static final String CLEANERS = "Cleaners";
