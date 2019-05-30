@@ -15,15 +15,6 @@
             android:padding="@dimen/padding_normal"
             tools:context=".view.PendingRegistrationActivity">
 
-        <com.google.android.material.button.MaterialButton android:layout_width="wrap_content"
-                                                           android:layout_height="wrap_content"
-                                                           android:text="@string/cancel_registration"
-                                                           android:textAllCaps="false"
-                                                           app:iconPadding="@dimen/padding_normal"
-                                                           app:icon="@drawable/ic_close_down"
-                                                           style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                                                           android:onClick="cancelRegistration"/>
-
         <io.codelabs.widget.BaselineGridTextView android:layout_width="match_parent"
                                                  android:layout_height="wrap_content"
                                                  android:layout_gravity="center_horizontal"
@@ -129,6 +120,14 @@
                                                        app:icon="@drawable/twotone_receipt_24px"
                                                        app:summary="@{business.desc, default=`@string/dummy_username`}"/>
 
+                <io.codelabs.sdk.widget.PreferenceView android:layout_width="match_parent"
+                                                       android:layout_height="wrap_content"
+                                                       app:title="Location Address"
+                                                       android:onClick="pickLocation"
+                                                       android:layout_marginTop="@dimen/spacing_micro"
+                                                       app:icon="@drawable/twotone_location_on_24px"
+                                                       app:summary="@{business.addresses.toString(), default=`@string/dummy_address`}"/>
+
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
@@ -143,6 +142,18 @@
                                                            android:layout_gravity="center_horizontal"
                                                            android:layout_marginTop="@dimen/spacing_large"
                                                            android:onClick="registerBusiness"/>
+
+        <com.google.android.material.button.MaterialButton android:layout_width="wrap_content"
+                                                           android:layout_height="wrap_content"
+                                                           android:text="@string/cancel_registration"
+                                                           android:textAllCaps="false"
+                                                           app:iconTint="@color/dribbble"
+                                                           android:textColor="@color/dribbble"
+                                                           app:iconPadding="@dimen/padding_normal"
+                                                           android:layout_gravity="center_horizontal"
+                                                           app:icon="@drawable/ic_close_down"
+                                                           style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                                           android:onClick="cancelRegistration"/>
 
     </io.codelabs.widget.ForegroundLinearLayout>
 </layout>

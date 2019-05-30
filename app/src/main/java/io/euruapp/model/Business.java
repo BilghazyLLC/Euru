@@ -32,7 +32,9 @@ public class Business extends DataModel implements Parcelable {
     }
 
     //Each user can own the same business in different locations
-    public Business(String userUID, String key, String name, String phone, String category, String desc, String image, List<EuruGeoPoint> addresses) {
+    public Business(String userUID, String key, String name, String phone,
+                    String category, String desc, String image,
+                    List<EuruGeoPoint> addresses) {
         this.userUID = userUID;
         this.key = key;
         this.name = name;
