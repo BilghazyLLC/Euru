@@ -8,20 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import io.codelabs.recyclerview.Divided
 import io.codelabs.recyclerview.GridItemDividerDecoration
-import io.codelabs.recyclerview.GridMarginDecoration
 import io.codelabs.recyclerview.SlideInItemAnimator
+import io.codelabs.sdk.glide.GlideApp
 import io.codelabs.util.bindView
 import io.codelabs.widget.ForegroundImageView
 import io.euruapp.R
 import io.euruapp.model.Category
 import io.euruapp.util.ConstantsUtils
 import io.euruapp.util.OnSearchableItemClickListener
-import io.codelabs.sdk.glide.GlideApp
 
 class HomeFragment : Fragment(), OnSearchableItemClickListener<Category> {
     private val grid: RecyclerView by bindView(R.id.grid)
@@ -37,13 +36,12 @@ class HomeFragment : Fragment(), OnSearchableItemClickListener<Category> {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = HomeListAdapter(requireContext(), this)
-        val lm = GridLayoutManager(requireContext(), 4)
-        grid!!.layoutManager = lm
-        grid!!.setHasFixedSize(true)
-        grid!!.adapter = adapter
-        grid!!.itemAnimator = SlideInItemAnimator()
-        grid!!.addItemDecoration(GridItemDividerDecoration(requireContext(), R.dimen.divider_height, R.color.divider))
-        grid!!.addItemDecoration(GridMarginDecoration(5))
+        val lm = LinearLayoutManager(requireContext())
+        grid.layoutManager = lm
+        grid.setHasFixedSize(true)
+        grid.adapter = adapter
+        grid.itemAnimator = SlideInItemAnimator()
+        grid.addItemDecoration(GridItemDividerDecoration(requireContext(), R.dimen.divider_height, R.color.divider))
     }
 
     override fun onItemClicked(position: Int, `object`: Category, isLongClick: Boolean) {
